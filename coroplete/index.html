@@ -46,10 +46,16 @@
 
 	var map = L.map('map').setView([42, 15], 6);
 
-	var realvista = L.tileLayer.wms("http://213.215.135.196/reflector/open/service?", {
-		layers: 'rv1',
-		format: 'image/jpeg',
-		attribution: "RealVista1.0 WMS OPEN di e-GEOS SpA - CC BY SA"
+	// var realvista = L.tileLayer.wms("http://213.215.135.196/reflector/open/service?", {
+	// 	layers: 'rv1',
+	// 	format: 'image/jpeg',
+	// 	attribution: "RealVista1.0 WMS OPEN di e-GEOS SpA - CC BY SA"
+	// }).addTo(map);
+
+
+
+	var layer = L.tileLayer('http://{s}.acetate.geoiq.com/tiles/acetate/{z}/{x}/{y}.png',{
+		attribution: 'Acetate tileset from GeoIQ',
 	}).addTo(map);
 
 	var info = L.control();
@@ -137,7 +143,7 @@
 		onEachFeature: onEachFeature
 	}).addTo(map);
 
-	map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
+	
 
 
 	var legend = L.control({position: 'bottomright'});
@@ -166,10 +172,10 @@
 
 	legend.addTo(map);
 
-	geojson.on('ready', function() {
-
-		map.fitBounds(geojson.getBounds());
-	});
+	map.fitBounds([
+		[36.531,7.734],
+		[47.289,17.930]
+		]);
 
 	</script>
 
