@@ -3,11 +3,11 @@
     <title>Open Beni Confiscati</title>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <link rel="stylesheet" href="http://www.simile-widgets.org/styles/common.css" type="text/css" />
-    <link rel="stylesheet" href="styles.css" type="text/css" />
     
-      <!-- dati in formato ATOM da Google SpreadSheet [n.b. forse problematico con nuovo fornmato usato da Google]-->
-     <link href="https://spreadsheets.google.com/feeds/list/0AnLypt4fNj0hdEE3MFpwOHk2djVocXQwZzcxVVpMZ0E/od6/public/basic?alt=json-in-script"  rel="exhibit/data" type="application/jsonp" ex:converter="googleSpreadsheets" />
-		
+	<!-- dati da file in formato JSON nella cartella 'dati' -->
+    <link href="dati/beni_confiscati_estratto.json" type="application/json" rel="exhibit-data" />
+
+	<!-- caricamento motore Exhibit -->
     <script src="http://api.simile-widgets.org/exhibit/current/exhibit-api.js"></script>
 	<!-- di seguito eventuali estensioni necessarie -->
     <link rel="exhibit-extension" href="http://api.simile-widgets.org/exhibit/current/extensions/map/map-extension.js"/>
@@ -17,14 +17,25 @@
   <div id="indice" ex:role="facet" 
    ex:expression=".sottocategoria">
  </div>
- 
- <!--  Tabella dei dati -->
-	 <div ex:role="view" ex:viewClass="Tabular"
-  ex:columns=".sottocategoria, .comune_scr, .regione"
-  ex:columnLabels="SottoCategoria, Comune, Regione"
-  ></div>
-  
 
+ 
+<div ex:role="exhibit-viewPanel">
+
+ <!-- Tabella dei dati -->
+<div ex:role="exhibit-view" ex:viewClass="Tabular"
+	ex:columns=".regione, .provincia_scr, .comune_scr, .categoria, .latlng"
+	ex:columnLabels="Regione, Provincia, Comune, Categoria, Coordinate"
+	></div>
+<!--mappa -->
+<div ex:role="exhibit-view"
+	ex:viewClass="Map"
+	ex:label="Mappa"
+	ex:latlng=".latlng"
+	ex:latlngPairSeparator=","
+	ex:center="41.91, 12.832"
+	ex:zoom="6"
+	></div>
+</div>
 	
   </body>
 </html>
