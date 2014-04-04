@@ -11,31 +11,53 @@
     <script src="http://api.simile-widgets.org/exhibit/current/exhibit-api.js"></script>
 	<!-- di seguito eventuali estensioni necessarie -->
     <link rel="exhibit-extension" href="http://api.simile-widgets.org/exhibit/current/extensions/map/map-extension.js"/>
-      </head>
+    
+	<style>
+	#sidebar {float:right; width:20%;}
+	</style>
+	
+	</head>
 <body>
 <!-- tabellina di filtraggio -->
-  <div id="indice" ex:role="facet" 
-   ex:expression=".sottocategoria">
+  <div id="indice" data-ex-role="facet" 
+   data-ex-expression=".sottocategoria">
  </div>
 
+	<div id="sidebar">
+		<div data-ex-role="exhibit-facet" data-ex-expression=".stato" data-ex-facet-label="Stato"></div>
+		<div data-ex-role="exhibit-facet" data-ex-expression=".categoria" data-ex-facet-label="Categoria" id="categoria-facet"></div>
+	</div>
  
-<div ex:role="exhibit-viewPanel">
-
- <!-- Tabella dei dati -->
-<div ex:role="exhibit-view" ex:viewClass="Tabular"
-	ex:columns=".regione, .provincia_scr, .comune_scr, .categoria, .latlng"
-	ex:columnLabels="Regione, Provincia, Comune, Categoria, Coordinate"
+<div data-ex-role="exhibit-viewPanel">
+<table data-ex-role="lens" class="scheda_bene" data-ex-item-types="bene" style="display: none;">
+	<tr><td>Regione:</td><td><div data-ex-content=".regione"></div></td></tr>
+	<tr><td>Provincia:</td><td><div data-ex-content=".provincia_scr"></div></td></tr>
+	<tr><td>Comune:</td><td><div data-ex-content=".comune_scr"></div></td></tr>
+	<tr><td>Categoria:</td><td><div data-ex-content=".categoria"></div></td></tr>
+	<tr><td>Sottocategoria:</td><td><div data-ex-content=".sottocategoria"></div></td></tr>
+	<tr><td>Ente destinatario:</td><td><div data-ex-content=".{ente destinatario}"></div></td></tr>
+	<tr><td>Dettaglio bene:</td><td><div data-ex-content=".{dettaglio bene}"></div></td></tr>
+	<tr><td>Decreto destinazione:</td><td><div data-ex-content=".{decreto destinazione}"></div></td></tr>
+</table>
+<div data-ex-role="exhibit-view"
+	data-ex-view-class="Exhibit.TabularView"
+	data-ex-columns=".regione, .provincia_scr, .comune_scr, .categoria, .latlng"
+	data-ex-column-labels="Regione, Provincia, Comune, Categoria, Coordinate"
 	></div>
-<!--mappa -->
-<div ex:role="exhibit-view"
-	ex:viewClass="Map"
-	ex:label="Mappa"
-	ex:latlng=".latlng"
-	ex:latlngPairSeparator=","
-	ex:center="41.91, 12.832"
-	ex:zoom="6"
+<div data-ex-role="exhibit-view"
+	data-ex-view-class="Map"
+	data-ex-label="Mappa"
+	data-ex-latlng=".latlng"
+	data-ex-latlng-pair-separator=","
+	data-ex-center="41.91, 12.832"
+	data-ex-zoom="6"
 	></div>
+<div data-ex-role="exhibit-view"
+	data-ex-label="Schede"
+	data-ex-paginate="true"
+  ></div>
 </div>
-	
+
+
   </body>
 </html>
