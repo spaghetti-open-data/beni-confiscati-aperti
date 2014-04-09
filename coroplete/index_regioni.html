@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Numero di beni confiscati alle mafie per Regione</title>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 	<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
@@ -37,6 +38,28 @@
 		opacity: 0.7;
 	}
 	</style>
+
+	<script type="text/javascript">
+	google.load("visualization", "1", {packages:["corechart"]});
+	google.setOnLoadCallback(drawChart);
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+			['Task', 'Hours per Day'],
+			['Work',     11],
+			['Eat',      2],
+			['Commute',  2],
+			['Watch TV', 2],
+			['Sleep',    7]
+			]);
+
+		var options = {
+			title: 'My Daily Activities'
+		};
+
+		var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+		chart.draw(data, options);
+	}
+	</script>	
 </head>
 <body>
 	<div id="map"></div>
@@ -54,130 +77,131 @@
 
 
 
-	var layer = L.tileLayer('http://{s}.acetate.geoiq.com/tiles/acetate/{z}/{x}/{y}.png',{
-		attribution: 'Acetate tileset from GeoIQ',
-	}).addTo(map);
+var layer = L.tileLayer('http://{s}.acetate.geoiq.com/tiles/acetate/{z}/{x}/{y}.png',{
+	attribution: 'Acetate tileset from GeoIQ',
+}).addTo(map);
 
-	var info = L.control();
+var info = L.control();
 
-	info.onAdd = function (map) {
-		this._div = L.DomUtil.create('div', 'info');
-		this.update();
-		return this._div;
+info.onAdd = function (map) {
+	this._div = L.DomUtil.create('div', 'info');
+	this.update();
+	return this._div;
+};
+
+info.update = function (props) {
+	this._div.innerHTML = '<h4>Beni immobili confiscati</h4>' +  (props ?
+		'<b> Regione: </b>' + props.NOME_REG + '<br />' + 
+		'<b> Numero totale: </b>' + props.totale + '<br />' + 
+		'<b> Abitazioni: </b>' + props.Abitazione + '<br />' +
+		'<b> Altri beni: </b>' + props.Altri_beni + '<br />' +
+		'<b> Capannoni: </b>' + props.Capannone + '<br />' +
+		'<b> Fabbricati: </b>' + props.Fabbricato + '<br />' +
+		'<b> Locale: </b>' + props.Locale + '<br />' +
+		'<b> Terreni: </b>' + props.Terreno + '<br />'+
+		'<div id=\'piechart\' style=\'width: 200px; height: 200px;\'></div>'+'<br />'
+		: 'Mouse su un poligono');
+};
+
+info.addTo(map);
+
+function getColor(d) {
+	return d > 1659 ? '#BD0026' :
+	d > 1029  ? '#DA2122' :
+	d > 505  ? '#F14624' :
+	d > 86  ? '#F97534' :
+	d > 60   ? '#FD9F45' :
+	d > 18   ? '#FDC357' :
+	d > 3   ? '#FEE180' :
+	'#FFFFB2';
+}
+
+function style(feature) {
+	return {
+		fillColor: getColor(feature.properties.totale),
+		weight: 0.3,
+		opacity: 1,
+		color: 'white',
+		fillOpacity: 0.7
 	};
+}
 
-	info.update = function (props) {
-		this._div.innerHTML = '<h4>Beni immobili confiscati</h4>' +  (props ?
-			'<b> Regione: </b>' + props.NOME_REG + '<br />' + 
-			'<b> Numero totale: </b>' + props.totale + '<br />' + 
-			'<b> Abitazioni: </b>' + props.Abitazione + '<br />' +
-			'<b> Altri beni: </b>' + props.Altri_beni + '<br />' +
-			'<b> Capannoni: </b>' + props.Capannone + '<br />' +
-			'<b> Fabbricati: </b>' + props.Fabbricato + '<br />' +
-			'<b> Locale: </b>' + props.Locale + '<br />' +
-			'<b> Terreni: </b>' + props.Terreno + '<br />' 
-			: 'Mouse su un poligono');
-	};
+function highlightFeature(e) {
+	var layer = e.target;
 
-	info.addTo(map);
+	layer.setStyle({
+		weight: 0.5,
+		color: '#666',
+		dashArray: '',
+		fillOpacity: 0.7
+	});
 
-	function getColor(d) {
-		return d > 1659 ? '#BD0026' :
-		d > 1029  ? '#DA2122' :
-		d > 505  ? '#F14624' :
-		d > 86  ? '#F97534' :
-		d > 60   ? '#FD9F45' :
-		d > 18   ? '#FDC357' :
-		d > 3   ? '#FEE180' :
-		'#FFFFB2';
+	if (!L.Browser.ie && !L.Browser.opera) {
+		layer.bringToFront();
 	}
 
-	function style(feature) {
-		return {
-			fillColor: getColor(feature.properties.totale),
-			weight: 0.3,
-			opacity: 1,
-			color: 'white',
-			fillOpacity: 0.7
-		};
+	info.update(layer.feature.properties);
+}
+
+var geojson;
+
+function resetHighlight(e) {
+	geojson.resetStyle(e.target);
+	info.update();
+}
+
+function zoomToFeature(e) {
+	map.fitBounds(e.target.getBounds());
+}
+
+function onEachFeature(feature, layer) {
+	layer.on({
+		mouseover: highlightFeature,
+		mouseout: resetHighlight,
+		click: zoomToFeature
+	});
+}
+
+geojson = L.geoJson(Beni_Regioni, {
+	style: style,
+	onEachFeature: onEachFeature
+}).addTo(map);
+
+
+
+
+var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (map) {
+
+
+
+	var div = L.DomUtil.create('div', 'info legend'),
+	grades = [2, 3, 18, 60, 86, 505, 1029, 1659],
+	labels = [],
+	from, to;
+
+	for (var i = 0; i < grades.length; i++) {
+		from = grades[i];
+		to = grades[i + 1];
+
+		labels.push(
+			'<i style="background:' + getColor(from + 1) + '"></i> ' +
+			from + (to ? '&ndash;' + to : '+'));
 	}
 
-	function highlightFeature(e) {
-		var layer = e.target;
+	div.innerHTML = labels.join('<br>');
+	return div;
+};
 
-		layer.setStyle({
-			weight: 0.5,
-			color: '#666',
-			dashArray: '',
-			fillOpacity: 0.7
-		});
+legend.addTo(map);
 
-		if (!L.Browser.ie && !L.Browser.opera) {
-			layer.bringToFront();
-		}
+map.fitBounds([
+	[36.531,7.734],
+	[47.289,17.930]
+	]);
 
-		info.update(layer.feature.properties);
-	}
-
-	var geojson;
-
-	function resetHighlight(e) {
-		geojson.resetStyle(e.target);
-		info.update();
-	}
-
-	function zoomToFeature(e) {
-		map.fitBounds(e.target.getBounds());
-	}
-
-	function onEachFeature(feature, layer) {
-		layer.on({
-			mouseover: highlightFeature,
-			mouseout: resetHighlight,
-			click: zoomToFeature
-		});
-	}
-
-	geojson = L.geoJson(Beni_Regioni, {
-		style: style,
-		onEachFeature: onEachFeature
-	}).addTo(map);
-
-	
-
-
-	var legend = L.control({position: 'bottomright'});
-
-	legend.onAdd = function (map) {
-
-
-
-		var div = L.DomUtil.create('div', 'info legend'),
-		grades = [2, 3, 18, 60, 86, 505, 1029, 1659],
-		labels = [],
-		from, to;
-
-		for (var i = 0; i < grades.length; i++) {
-			from = grades[i];
-			to = grades[i + 1];
-
-			labels.push(
-				'<i style="background:' + getColor(from + 1) + '"></i> ' +
-				from + (to ? '&ndash;' + to : '+'));
-		}
-
-		div.innerHTML = labels.join('<br>');
-		return div;
-	};
-
-	legend.addTo(map);
-
-	map.fitBounds([
-		[36.531,7.734],
-		[47.289,17.930]
-		]);
-
-	</script>
+</script>
 
 </body>
 </html>
