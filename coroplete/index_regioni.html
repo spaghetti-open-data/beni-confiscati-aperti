@@ -4,7 +4,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Numero di beni confiscati alle mafie per Regione</title>
-	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
 	<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
@@ -38,28 +37,6 @@
 		opacity: 0.7;
 	}
 	</style>
-
-	<script type="text/javascript">
-	google.load("visualization", "1", {packages:["corechart"]});
-	google.setOnLoadCallback(drawChart);
-	function drawChart() {
-		var data = google.visualization.arrayToDataTable([
-			['Task', 'Hours per Day'],
-			['Work',     11],
-			['Eat',      2],
-			['Commute',  2],
-			['Watch TV', 2],
-			['Sleep',    7]
-			]);
-
-		var options = {
-			title: 'My Daily Activities'
-		};
-
-		var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-		chart.draw(data, options);
-	}
-	</script>	
 </head>
 <body>
 	<div id="map"></div>
@@ -69,6 +46,11 @@
 
 	var map = L.map('map').setView([41.91, 12.832], 6);
 
+	// var realvista = L.tileLayer.wms("http://213.215.135.196/reflector/open/service?", {
+	// 	layers: 'rv1',
+	// 	format: 'image/jpeg',
+	// 	attribution: "RealVista1.0 WMS OPEN di e-GEOS SpA - CC BY SA"
+	// }).addTo(map);
 
 
 
@@ -93,8 +75,7 @@
 			'<b> Capannoni: </b>' + props.Capannone + '<br />' +
 			'<b> Fabbricati: </b>' + props.Fabbricato + '<br />' +
 			'<b> Locale: </b>' + props.Locale + '<br />' +
-			'<b> Terreni: </b>' + props.Terreno + '<br />'+
-			'<div id=\"piechart\" style=\"width: 200px; height: 200px;\"></div>'+'<br />'
+			'<b> Terreni: </b>' + props.Terreno + '<br />' 
 			: 'Mouse su un poligono');
 	};
 
@@ -162,7 +143,7 @@
 		onEachFeature: onEachFeature
 	}).addTo(map);
 
-
+	
 
 
 	var legend = L.control({position: 'bottomright'});
