@@ -100,6 +100,7 @@ h1,h2,h3,h4,h5,h6 { margin: 0; }
 .title {
     font-family: 'Bree Serif', serif;
     font-size: 2em;
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.15);
 }
 .site-title {
     padding: 0% 5% 0% 5%;
@@ -114,6 +115,7 @@ h1,h2,h3,h4,h5,h6 { margin: 0; }
     font-family: 'Raleway', sans-serif;
     font-size: 1em;
     font-weight: 200;
+    text-shadow: 0px 1px 0px rgba(55,55,55,0.25);
 }
 .site-subtitle {
     padding: 0% 5% .5% 5%;
@@ -122,6 +124,7 @@ h1,h2,h3,h4,h5,h6 { margin: 0; }
     font-family: 'Raleway', sans-serif;
     font-weight: 200;
     font-size: 1em;
+    text-shadow: 0px 1px 0px rgba(55,55,55,0.25);
 }
 .red { color: #EB593C; }
 .grey { color: #333333; }
@@ -132,6 +135,11 @@ h1,h2,h3,h4,h5,h6 { margin: 0; }
 .cyanBG { background-color: #ABDCD6; }
 
 .r4 { border-radius: 4px; }
+
+.link {
+    margin: 0;
+    text-decoration: none;
+}
 
 header, footer {
     position: fixed;
@@ -180,6 +188,22 @@ footer:hover { bottom: 0; }
     width: 100%;
     min-height: 100%;
 }
+.page-nav {
+    position: relative;
+    width: 100%;
+}
+
+.coro-switch { 
+    width: 33.28%;
+    text-align: center;
+    font-size: .8em;
+    line-height: 2.25em;
+    border-right: 1px solid #ABDCD6;
+    border-collapse: collapse;
+}
+.coro-switch.active { background: #ABDCD6; color: #EB593C; }
+.coro-switch:hover { background: #ABDCD6; cursor: pointer; color: #EB593C; }
+
 
 /* ==========================================================================
    Helper classes
@@ -253,6 +277,11 @@ footer:hover { bottom: 0; }
 .clearfix:after {
     clear: both;
 }
+
+.left { float: left; }
+.right { float: right; }
+.clear { clear: both; }
+
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
