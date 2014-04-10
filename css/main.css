@@ -91,7 +91,95 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+h1,h2,h3,h4,h5,h6 { margin: 0; }
 
+.title {
+    font-family: 'Bree Serif', serif;
+    font-size: 2em;
+}
+.site-title {
+    padding: 0% 5% 0% 5%;
+    font-size: 2em;
+    line-height: 1.6em;
+}
+.page-title {
+    padding: .5% 5% .5% 5%;
+    text-align: center;
+}
+.subtitle {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+    font-weight: 200;
+}
+.site-subtitle {
+    padding: 0% 5% .5% 5%;
+}
+.p {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    font-size: 1em;
+}
+.red { color: #EB593C; }
+.grey { color: #333333; }
+.cyan { color: #ABDCD6; }
+.white { color: #FFFCEC; }
+.redBG { background-color: #EB593C; }
+.greyBG { background-color: #333333; }
+.cyanBG { background-color: #ABDCD6; }
+
+.r4 { border-radius: 4px; }
+
+header, footer {
+    position: fixed;
+    width: 100%;
+    z-index: 200;
+}
+header { top: 0; left: 0; min-height: 10%; }
+
+#toggle-menu { 
+    position: absolute;
+    float: right;
+    right: 0;
+    top: 0;
+    width: 5%;
+    height: 100%;
+    text-align: center;
+}
+
+footer { 
+    bottom: -25%; 
+    left: 0; 
+    height: 30%;
+    -webkit-transition: bottom .1s ease;
+    transition: bottom .1s ease; 
+}
+footer:hover { bottom: 0; }
+
+#menu {
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    right: -20%;
+    z-index: 300;
+}
+
+#site-wrapper {
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+    z-index: 100;
+    top: 10%;
+}
+
+.page {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+}
 
 /* ==========================================================================
    Helper classes
@@ -174,6 +262,18 @@ textarea {
 
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) { 
+    /* STYLES GO HERE */
+    .site-subtitle {
+        padding: 0% 5% 2.5% 5%;
+        max-width: 220px;
+    }
+    #toggle-menu { 
+        width: 10%;
+    }
 }
 
 @media print,
