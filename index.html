@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -180,3 +181,240 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </body>
 </html>
+=======
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Bree+Serif|Raleway:200,400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/coropletes.css">
+        <link rel="stylesheet" href="css/exhibit.css">
+        <link rel="stylesheet" href="css/main.css">
+        <!-- <link rel="stylesheet/less" type="text/css" href="css/styles.less" /> -->
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js"></script>
+        <![endif]-->
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+        <script>
+          // less = {
+          //   env: "development",
+          //   async: false,
+          //   fileAsync: false,
+          //   poll: 1000,
+          //   functions: {},
+          //   dumpLineNumbers: "comments",
+          //   relativeUrls: false,
+          //   rootpath: ":/a.com/"
+          // };
+        </script>
+        <!-- <script src="js/vendor/less-1.7.0.js" type="text/javascript"></script> -->
+        <link href="js/data/exhibit/beni_confiscati_02_03.json" type="application/json" rel="exhibit/data" />
+        <script src="js/vendor/exhibit/scripted/src/exhibit-api.js?bundle=false" type="text/javascript"></script>
+        <link rel="exhibit-extension" href="js/vendor/exhibit/scripted/src/extensions/map/map-extension.js?bundle=false"/>
+    </head>
+    <body class="grey">
+        <!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <header class="redBG cyan">
+            <h1 class="title site-title white">CONFISCATI BENE!</h1>
+            <h3 class="subtitle site-subtitle white">I risultati dell'hackaton #SOD14 sui beni confiscati alle mafie, a partire dal scraping del sito dell'Agenzia Nazionale per i beni confiscati.</h3>
+            <div class="toggle cyanBG red" id="toggle-menu"><i class="fa fa-bars"></i></div>
+        </header>
+
+        <nav class="greyBG white" id="menu">
+            <ul>
+                <li id="home-btn" class="menu-entry p cyan base-text"><i class="fa fa-file-text"></i><span class="menu-separator">MANIFESTO</span></li>
+                <li id="data-btn" class="menu-entry p cyan base-text"><i class="fa fa-bar-chart-o"></i><span class="menu-separator">I DATI</span></li>
+                <li id="coroplets-btn" class="menu-entry p cyan base-text"><i class="fa fa-globe"></i><span class="menu-separator">LE CHOROPLETHS</span></li>
+                <li id="dataset-btn" class="menu-entry p cyan base-text"><i class="fa fa-table"></i><span class="menu-separator">I DATASET</span></li>
+                <li id="tools-btn" class="menu-entry p cyan base-text"><i class="fa fa-cogs"></i><span class="menu-separator">GLI STRUMENTI</span></li>
+                <li id="about-btn" class="menu-entry p cyan base-text"><i class="fa fa-question-circle"></i></i><span class="menu-separator">HELLO!</span></li>
+            </ul>
+        </nav>
+
+        <div class="p" id="site-wrapper">
+
+            <div class="page" id="home">
+                <h1 class="title page-title cyanBG red"> - MANIFESTO - </h1>
+                <div class="row clearfix">
+                    <div class="col3 col">
+                        <i class="fa fa-lock big-icon red"></i>
+                        <p class="p manifesto-text red">i dati sui beni confiscati alle mafie devono essere accessibili in modo più semplice, diretto e ricco. Per liberarne la grande energia potenziale è indispensabile pubblicarli in Open Data</p>
+                    </div>
+                    <div class="col3 col">
+                        <i class="fa fa-key big-icon red"></i>
+                        <p class="p manifesto-text red">i dati pubblicati sul sito dell'"Agenzia Nazionale per l'amministrazione e la destinazione dei beni sequestrati e confiscati alla criminalità" non sono completi, primari, tempestivi e riutilizzabili. Li abbiamo estratti, resi disponibili in Open Data ed abbiamo creato dei piccoli dimostratori che mostrino come se ne potrebbe fare riuso in termini di visualizzazione e analisi</p>
+                    </div>
+                    <div class="col3 col">
+                        <i class="fa fa-unlock-alt big-icon red"></i>
+                        <p class="p manifesto-text red">chiediamo all'Agenzia Nazionale di aprire questi dati in modo che possano essere Confiscati bene!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page" id="data">
+                <h1 class="title page-title cyanBG red"> - I DATI - </h1>
+                <div class="row clearfix">
+
+                    <div class="col2 col">
+
+                        <div class="col3 col">
+                            <div data-ex-role="exhibit-facet" data-ex-expression=".COD_REG" data-ex-facet-label="Regione"></div>
+                        </div>
+                        <div class="col3 col">
+                            <div data-ex-role="exhibit-facet" data-ex-expression=".COD_PRO" data-ex-facet-label="Provincia"></div>
+                        </div>
+                        <div class="col3 col">
+                            <div data-ex-role="exhibit-facet" data-ex-expression=".comune" data-ex-facet-label="Comune"></div>
+                        </div>
+
+                        <div class="row clear"></div>
+                        
+                        <div class="col1" data-ex-role="exhibit-viewPanel">
+                        <table data-ex-role="lens" class="scheda_bene" data-ex-item-types="bene" style="display: none;">
+                            <tr><td>Regione:</td><td><div data-ex-content=".COD_REG"></div></td></tr>
+                            <tr><td>Provincia:</td><td><div data-ex-content=".COD_PRO"></div></td></tr>
+                            <tr><td>Comune:</td><td><div data-ex-content=".comune"></div></td></tr>
+                            <tr><td>Categoria:</td><td><div data-ex-content=".tipo_scr"></div></td></tr>
+                            <tr><td>Sottocategoria:</td><td><div data-ex-content=".sottocategoria"></div></td></tr>
+                            <tr><td>Ente destinatario:</td><td><div data-ex-content=".{ente destinatario}"></div></td></tr>
+                            <tr><td>Dettaglio bene:</td><td><div data-ex-content=".{dettaglio bene}"></div></td></tr>
+                            <tr><td>Decreto destinazione:</td><td><div data-ex-content=".{decreto destinazione}"></div></td></tr>
+                        </table>
+                        <div data-ex-role="exhibit-view"
+                        data-ex-label="Tabella"
+                        data-ex-view-class="Exhibit.TabularView"
+                        data-ex-columns=".COD_REG, .COD_PRO, .comune, .tipo_scr"
+                        data-ex-column-labels="Regione, Provincia, Comune, Categoria"
+                        data-ex-paginate="true"
+                        ></div>
+                        <div data-ex-role="exhibit-view"
+                        data-ex-view-class="Map"
+                        data-ex-label="Mappa"
+                        data-ex-latlng=".latlng"
+                        data-ex-latlng-pair-separator=","
+                        data-ex-center="41.91, 12.832"
+                        data-ex-zoom="5"
+                        ></div>
+                        <div data-ex-role="exhibit-view"
+                        data-ex-label="Schede"
+                        data-ex-paginate="true"
+                        ></div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="col3 col">
+                        <!-- tabellina di filtraggio -->
+                        <div class="col1 col">
+                            <div data-ex-role="facet" data-ex-facet-class="TextSearch" data-ex-facet-label="Cerca"></div>
+                            <div data-ex-role="facet" data-ex-expression=".stato" data-ex-facet-label="Stato" data-ex-sort-mode="count"></div>
+                            <div data-ex-role="facet" data-ex-expression=".tipo_scr" data-ex-facet-label="Categoria" data-ex-sort-mode="count"></div>
+                            <div data-ex-role="facet" data-ex-expression=".sottocategoria" data-ex-facet-label="Sottocategoria" data-ex-sort-mode="count"></div>
+                            <div data-ex-role="facet" data-ex-expression=".ente_destinatario" data-ex-facet-label="Ente destinatario" data-ex-missing-label="Dato non presente" data-ex-sort-mode="count"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page" id="coroplets">
+                <h1 class="title page-title cyanBG red"> - LE CHOROPLETHS - </h1>
+                <div class="page-nav redBG" id="coro-switches">
+                    <p class="left link coro-switch redBG white"><span class="hover-box active" id="region">REGIONI</span></p>
+                    <p class="left link coro-switch redBG white"><span class="hover-box" id="province">PROVINCE</p>
+                    <p class="left link coro-switch redBG white"><span class="hover-box" id="city">COMUNI</p>
+                </div>
+                <div class="clear"></div>
+                <div class="page-content">
+                    <div id="map"></div>
+                </div>
+                <div class="scroller left-scr left"></div>
+                <div class="scroller right-scr right"></div>
+            </div>
+
+            <div class="page" id="dataset">
+                <h1 class="title page-title cyanBG red"> - I DATASET - </h1>
+            </div>
+
+            <div class="page" id="tools">
+                <h1 class="title page-title cyanBG red"> - GLI STRUMENTI - </h1>
+            </div>
+
+            <div class="page last-page" id="about">
+                <h1 class="title page-title cyanBG red"> - HELLO! - </h1>
+                <div class="row clearfix">
+                    <p class="col1 col title medium-text red slide hidden"><i class="fa fa-quote-left red"></i>&nbsp;&nbsp;Brindisi, confiscati beni per 5 milioni di Euro&nbsp;&nbsp;<i class="fa fa-quote-right red"></i></p>
+                    <p class="col1 col title medium-text red slide hidden"><i class="fa fa-quote-left red"></i>&nbsp;&nbsp;Sicilia, sequestrati beni per 1,5 milioni a quattro imprenditori&nbsp;&nbsp;<i class="fa fa-quote-right red"></i></p>
+                    <p class="col1 col title medium-text red slide hidden"><i class="fa fa-quote-left red"></i>&nbsp;&nbsp;Frosinone, 75 i beni immobili confiscati e sottratti alla criminalità organizzata&nbsp;&nbsp;<i class="fa fa-quote-right red"></i></p>
+                    <p class="col1 col title medium-text red slide hidden"><i class="fa fa-quote-left red"></i>&nbsp;&nbsp;Sciacca, due beni confiscati diventano la Casa del volontariato&nbsp;&nbsp;<i class="fa fa-quote-right red"></i></p>
+                    <p class="col1 col title medium-text red slide hidden"><i class="fa fa-quote-left red"></i>&nbsp;&nbsp;Sicilia, 30 immobili consegnati al sindaco di Palermo&nbsp;&nbsp;<i class="fa fa-quote-right red"></i></p>
+                    <div class="col3 col">
+                        <p class="p red">
+                            <i class="fa fa-quote-left red left"></i>
+                            &nbsp;&nbsp;Questi sono solo alcuni dei titoli che nelle ultime settimane hanno popolato i nostri quotidiani e che testimoniano non solo la quotidiana battaglia della macchina dello Stato nel portare via terreno, sembra proprio il caso di dirlo, alla criminalità organizzata, ma soprattutto l'importanza di procedure efficaci affinché i beni una volta confiscati diventino una risorsa per la collettività.
+Nel 2010 per gestire questi flussi di confische via via crescenti è nata l'<strong>Agenzia Nazionale per l'amministrazione e la destinazione dei beni Sequestrati e Confiscati alla criminalità organizzata</strong> (ANBSC), sotto la vigilanza del Ministero dell'Interno, che si è occupata negli anni, circondata da associazioni come Libera, di raccogliere e organizzare i dati relativi a questi flussi. Da un anno e mezzo a questa parte però i dati sulle confische sembrano non essere più disponibili sul sito dell'Agenzia, il che porta con sé conseguenze notevoli nel lavoro di chi come Libera si occupa tra le altre cose di promuovere il riuso di questi territori. Questo è il grido lanciato da Don Luigi Ciotti e Rosy Bindi, rispettivamente presidente di Libera e presidente della commissione antimafia, in una video intervista del 29 marzo scorso apparsa su Il Fatto Quotidiano. È importante – afferma nella stessa occasione Rosy Bindi – che si crei una rete di interlocutori di cui l'Agenzia tenga le fila. Solo in questo modo sarà possibile in tempi breve mettere a punto, attraverso i dovuti provvedimenti, un sistema di gestione rapida ed efficace di questi beni.
+                        </p>
+                    </div>
+                    <div class="col3 col">
+                        <p class="p red">Per fare ciò è indispensabile che, affinché ne venga liberata la grande energia potenziale, <strong>i dati sui beni confiscati vengano pubblicati completi e soprattutto in Open Data</strong>. Che siano cioè accessibili in modo più semplice, più diretto e più ricco. Per questa ragione è nato <strong>Confiscati Bene</strong>, il risultato di un gruppo di lavoro durante il raduno bolognese dello scorso marzo di Spaghetti Open Data (#SOD14), una comunità di cittadini italiani interessati al rilascio di dati pubblici in formato aperto, in modo da renderne facile l'accesso e il riuso, di cui fanno parte hacker civici, informatici, giornalisti, dipendenti delle pubbliche amministrazioni e semplici “smanettoni”. 
+Non siamo certamente l'unico gruppo di cittadini interessati a questi dati, basti pensare al lavoro che stanno facendo i cittadini di Monithon, la Maratona di monitoraggio civico delle politiche pubbliche in Italia basata sui dati di Open Coesione, sul riuso dei beni confiscati alle mafie. Oppure alla convezione firmata lo scorso 4 aprile tra l'Università di Palermo, l'Università Cattolica Sacro Cuore di Milano, la Commissione parlamentare Antimafia e la Procura Nazionale Antimafia, per promuovere una mappatura aggiornata delle forme di infiltrazione della criminalità organizzata all'interno dei meccanismi della legalità.</p>
+                    </div>
+                    <div class="col3 col">
+                        <p class="p red">
+                            Ma che cosa è stato fatto dunque a #SOD14? Partendo dai dati che erano presenti sul sito dell'Agenzia, li abbiamo estratti, resi disponibili per il riuso e <strong>costruito una demo</strong> sull'utilizzo che se ne potrebbe fare in termini di visualizzazione e analisi. Quello che presentiamo qui è dunque un primo risultato: <strong>una mappa dei beni confiscati per regione, provincia e comune  a seconda del tipo di bene</strong> (abitazione, terreno, locale, fabbricato), un esempio di come sfruttare al massimo le potenzialità dei dati all'interno di un contesto di interesse sociale qual è la situazione dei beni confiscati alla criminalità organizzata. 
+Nel fare questo, ancora una volta, è di fondamentale importanza che i dati siano completi, facili da fruire e soprattutto aperti. Per concludere, quindi, la nostra richiesta nei confronti dell'Agenzia è anzitutto di <strong>APRIRE I DATI</strong>, in modo che i beni confiscati diventino sempre più rapidamente Confiscati Bene. Perché, come scriveva ormai dieci anni fa la giornalista francese Marcelle Padovani nell'introduzione al libro <em>Cose di Cosa Nostra</em>, <em>“Se […] l'amministrazione dei beni confiscati ai mafiosi dovesse rimanere farraginosa e irta di ostacoli così com'è oggi, rendendo improbabile l'uso pubblico di quei beni per la collettività, sarebbero ancora le mafie a giovarsene.”</em>
+                            <i class="fa fa-quote-right red right"></i>
+                        </p>
+                        <p class="grey">di Cristina Da Rold</p>
+                    </div>
+                </div>
+                <div class="row clearfix" id="team">
+                    <p class="col1 col p medium-text red">TEAM</p>
+                </div>
+                <div class="row clearfix" id="credits">
+                    <p class="col1 col p medium-text red">CREDITS</p>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="greyBG white">
+        </footer>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+
+        <script type="text/javascript" src="js/data/coroplete/regioni_beni_tipo.js"></script>
+        <script type="text/javascript" src="js/data/coroplete/province_beni_tipo.js"></script>
+        <script type="text/javascript" src="js/data/coroplete/comuni_beni_tipo.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <!-- <script>
+        //     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        //     function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+        //     e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+        //     e.src='//www.google-analytics.com/analytics.js';
+        //     r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+        //     ga('create','UA-XXXXX-X');ga('send','pageview');
+        // </script> -->
+    </body>
+</html>
+>>>>>>> gh-pages-web-view

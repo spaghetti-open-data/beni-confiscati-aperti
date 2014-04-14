@@ -1,0 +1,166 @@
+div.exhibit-bookmarkWidget-popup, div.exhibit-toolboxWidget-popup { display: none !important; }
+div.exhibit-resizableDivWidget-resizer { visibility: hidden; }
+
+div.exhibit-facet-body-frame { max-height: 300px; overflow: scroll; }
+
+div .exhibit-facet-body { border: 0px !important; height: auto !important; min-height: 100px !important; }
+div .exhibit-facet-header {
+	background: #ABDCD6;
+	color: #EB593C;
+	font-size: 24px;
+	text-transform: uppercase;
+	padding: 10px !important;
+	margin-bottom: 30px;
+	font-weight: 200 !important;
+}
+span.exhibit-facet-header-title { font-weight: 200 !important; }
+
+div .exhibit-facet-value {
+	position: relative;
+	height: 10px;
+	float: left !important;
+	padding: 5px !important;
+	border-radius: 4px;
+	background: #EB593C;
+	color: #FFFCEC;
+	clear: none !important;
+	margin: 0 5px 5px 0;
+	line-height: 1em;
+	font-size: 12px;
+	font-style:italic;
+	font-weight: 400 !important;
+}
+div .exhibit-facet-value:hover {
+	background: #a43e2a;
+	cursor: pointer;
+}
+div.exhibit-facet-value-count { color: #FFFCEC !important; }
+a.exhibit-facet-value-link {
+	color: #FFFCEC;
+	text-decoration: none;
+}
+a.exhibit-facet-value-link:hover {
+	text-decoration: none !important;
+}
+div.exhibit-facet-value-checkbox {
+	margin-top: -2px;
+}
+
+div.exhibit-collectionView-header, div.exhibit-views-header {
+	background: #ABDCD6;
+	color: #EB593C;
+	font-size: 24px;
+	text-transform: uppercase;
+	padding-bottom: 10px !important;
+	/*margin-bottom: 30px;*/
+	font-weight: 400 !important;
+}
+div.exhibit-collectionView-footer { padding-top: 50px !important; }
+div.exhibit-views-header { margin-bottom: 0; padding-bottom: 30px; }
+
+span.exhibit-collectionSummaryWidget-results { padding: 0 10px 0 10px !important; }
+
+table.exhibit-tabularView-body tr {
+	color: #EB593C;
+	font-size: 18px;
+	padding: 1%;
+}
+table.exhibit-tabularView-body tr:nth-child(2n+0) {
+	/*background: #FFFCEC;*/
+	background: url('img/white_wall_hash_@2X.png') transparent;
+    background-size: 500px 500px;
+}
+
+table.exhibit-tabularView-body, table.exhibit-tabularView-body th, table.exhibit-tabularView-body td {
+	border-spacing: 0px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-collapse:collapse;
+
+	height: 30px;
+	vertical-align:middle;
+	padding: .5%;
+}
+
+th.exhibit-tabularView-columnHeader, th.exhibit-tabularView-columnHeader-sorted {
+	background: #EB593C;
+	color: #FFFCEC;
+	text-align: left;
+	font-size: 24px;
+	height: 50px;
+	font-weight: 200 !important;
+}
+
+div.exhibit-mapView-map { border: none !important; }
+
+ol.exhibit-tileView-body { margin: 0 !important; padding: 0; padding-bottom: 5%; list-style-position: inside; position: relative; top: 30px; }
+ol.exhibit-tileView-body li {
+	float: left; width: 29.33%;
+	margin: 0 1.5% 1.5% 0;
+	padding: 1.5%;
+	background: #333333;
+	color: #FFFCEC;
+	border-radius: 4px;
+	font-size: .8em;
+}
+ol.exhibit-tileView-body li:nth-child(3n+0) { margin-right: 0; }
+
+a.exhibit-action, a.exhibit-action:link, a.exhibit-action:active, a.exhibit-action:visited {
+	/*background: #ABDCD6;*/
+	color: #EB593C;
+	border:none !important;
+	font-size: 14px !important;
+}
+a.exhibit-action:hover {
+	text-decoration: line-through !important;
+}
+
+div.exhibit-tabularView-pagingControls, div.exhibit-collectionView-pagingControls {
+	font-size: 14px;
+	margin-bottom: 2em !important;
+}
+div.exhibit-tabularView-pagingControls a, div.exhibit-collectionView-pagingControls a {
+	text-decoration: none;
+	color: #EB593C !important;
+	padding: 1%;
+}
+div.exhibit-tabularView-pagingControls a:hover, div.exhibit-collectionView-pagingControls a:hover {
+	background: #EB593C !important;
+	color: #FFFCEC !important;
+	border-radius: 4px;
+}
+
+span.exhibit-viewPanel-viewSelection-view {
+	margin-top: 1em !important;
+	background: #ABDCD6;
+	border-radius: 4px 4px 0 0;
+	color: #EB593C !important;
+	padding: 1% 1% 2px 1%;
+}
+span.exhibit-viewPanel-viewSelection-selectedView {
+	margin-top: 1em !important;
+	background: #EB593C;
+	border-radius: 4px 4px 0 0;
+	color: #FFFCEC !important;
+	padding: 1% 1% 2px 1%;
+	border-bottom: 0 !important;
+	font-weight: 200 !important;
+}
+
+div.exhibit-text-facet input {
+	width: 97% !important;
+	box-shadow: none !important;
+	height: 2em;
+	border-color: transparent; !important;
+	border-radius: 4px !important;
+	margin-bottom: 2em !important;
+	background: #EB593C !important;
+	color: #FFFCEC;
+	padding: 0 1% 0 1% !important;
+}
+
+
+
+
