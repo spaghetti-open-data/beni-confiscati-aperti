@@ -34,7 +34,7 @@ var BC = {
 		'http://{s}.acetate.geoiq.com/tiles/acetate/{z}/{x}/{y}.png',
 		{
 			attribution: 'Acetate tileset from GeoIQ',
-			opacity: .1
+			opacity: .7
 		}
 	),
 	info: null,
