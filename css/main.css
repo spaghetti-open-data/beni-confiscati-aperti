@@ -91,11 +91,16 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/* - //////////////////// - */
+/* -    STILI DI BASE     - */
+/* - //////////////////// - */
+
 html, body {
     height: 100%;
     margin: 0;
 }
 h1,h2,h3,h4,h5,h6 { margin: 0; }
+ul li { list-style-type: none; }
 
 .title {
     font-family: 'Bree Serif', serif;
@@ -136,17 +141,37 @@ h1,h2,h3,h4,h5,h6 { margin: 0; }
 
 .r4 { border-radius: 4px; }
 
-.link {
-    margin: 0;
-    text-decoration: none;
-}
+.link { margin: 0; text-decoration: none; }
+
+.big-text { font-size: 3em; }
+.medium-text { font-size: 2em; }
+.base-text { font-size: 1em; }
+.small-text { font-size: .8em; }
+.tiny-text { font-size: .5em; }
+.manifesto-text { font-size: 1.5em; text-align: center; }
+
+.big-icon { font-size: 8em; width: 100%; text-align: center; }
+
+/* - //////////////////// - */
+/* -   LAYOUT EXHIBIT     - */
+/* - //////////////////// - */
+
+.row { width: 100%; padding: 2% 0 2% 0; }
+.col { float: left; }
+.col1 { width: 96%; padding: 0 2% 0 2%; }
+.col2 { width: 62.66%; padding: 0 2% 0 2%; }
+.col3 { width: 29.33%; padding: 0 2% 0 2%; }
+
+/* - //////////////////// - */
+/* - STILI DEGLI ELEMENTI - */
+/* - //////////////////// - */
 
 header, footer {
     position: fixed;
     width: 100%;
     z-index: 200;
 }
-header { top: 0; left: 0; min-height: 10%; }
+header { top: 0; left: 0; /*min-height: 10%; */height: 100px; opacity: 1; }
 
 #toggle-menu { 
     position: absolute;
@@ -156,6 +181,17 @@ header { top: 0; left: 0; min-height: 10%; }
     width: 5%;
     height: 100%;
     text-align: center;
+    font-size: 2em;
+    line-height: 3em;
+    text-align: center;
+    -webkit-box-shadow: -1px 0px 0px 0px rgba(171, 220, 214, .5);
+    -moz-box-shadow:    -1px 0px 0px 0px rgba(171, 220, 214, .5);
+    box-shadow:         -1px 0px 0px 0px rgba(171, 220, 214, .5);
+}
+#toggle-menu:hover {
+    background-color: #EB593C;
+    color: #ABDCD6;
+    cursor: pointer;
 }
 
 footer { 
@@ -169,41 +205,73 @@ footer:hover { bottom: 0; }
 
 #menu {
     position: fixed;
-    width: 20%;
+    width: 210px;
+    /*min-width: 200px;*/
     height: 100%;
-    right: -20%;
+    right: -210px;
     z-index: 300;
 }
+#menu ul {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+.menu-entry { 
+    position: relative;
+    width: 100%;
+    padding: 12.5% 0 12.5% 7.5%;
+}
+.menu-entry:hover {
+    background: #ABDCD6;
+    color: #333333;
+    cursor: pointer;
+}
+.menu-separator { margin-left: 20px; }
 
 #site-wrapper {
+    background: url('img/white_wall_hash_@2X.png') transparent;
+    background-size: 500px 500px;
     position: relative;
     min-height: 100%;
     height: 100%;
     z-index: 100;
-    top: 10%;
+    top: 100px;
+    min-width: 1024px;
 }
 
 .page {
+    background: url('img/white_wall_hash_@2X.png') transparent;
+    background-size: 500px 500px;
     position: relative;
     width: 100%;
     min-height: 100%;
 }
+.last-page { padding-bottom: 10%; }
 .page-nav {
     position: relative;
     width: 100%;
 }
 
 .coro-switch { 
-    width: 33.28%;
+    width: 33.33%;
     text-align: center;
-    font-size: .8em;
     line-height: 2.25em;
-    border-right: 1px solid #ABDCD6;
-    border-collapse: collapse;
 }
-.coro-switch.active { background: #ABDCD6; color: #EB593C; }
-.coro-switch:hover { background: #ABDCD6; cursor: pointer; color: #EB593C; }
+.hover-box { padding: .5%; border-radius: 4px }
+.hover-box.active { background: #ABDCD6; color: #EB593C; }
+.hover-box:hover { background: #ABDCD6; cursor: pointer; color: #EB593C; }
 
+.scroller {
+    position: absolute;
+    width: 5%;
+    height: 100%;
+    top: 0;
+    background: transparent;
+}
+.left-scr { left: 0; }
+.right-scr { right: 0; }
 
 /* ==========================================================================
    Helper classes
@@ -296,13 +364,21 @@ footer:hover { bottom: 0; }
 and (min-device-width : 320px) 
 and (max-device-width : 568px) { 
     /* STYLES GO HERE */
+    html, body {
+        cursor: pointer;
+    }
+    .site-title { font-size: 1em; line-height: 3em }
     .site-subtitle {
         padding: 0% 5% 2.5% 5%;
         max-width: 220px;
+        display: none;
     }
     #toggle-menu { 
-        width: 10%;
+        width: 50px;
+        line-height: 1.5em;
     }
+    .menu-entry .fa { margin-left: 20%; margin-bottom: 30%; }
+    .menu-separator { display: none; }
 }
 
 @media print,

@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>SIMILE Widgets | Exhibit 3.0 | Scripted Demos | MIT Nobel Prize Winners</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" href="http://www.simile-widgets.org/styles/common.css" type="text/css" />
+
+    <link href="nobelists.js" type="application/json" rel="exhibit-data" />
+
+    <link rel="exhibit-extension" type="text/javascript" href="../api/extensions/time/time-extension.js" />
+
+    <!-- Replace the URL here with http://api.simile-widgets.org/exhibit/current/exhibit-api.js -->
+    <script src="../api/exhibit-api.js"></script>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Lucida Grande","Tahoma","Helvetica","Arial",sans-serif;
+            color: #222;
+        }
+        table, tr, td {
+            font-size: inherit;
+        }
+        tr, td {
+            vertical-align: top;
+        }
+        img, a img {
+            border: none;
+        }
+        #main-content { background: white; }
+        #title-panel { padding: 0.25in 0.5in; }
+        #top-panels {
+            padding:        0.5em 0.5in;
+            border-top:     1px solid #BCB79E;
+            border-bottom:  1px solid #BCB79E;
+            background:     #FBF4D3;
+        }
+        
+        .exhibit-tileView-body { list-style: none; }
+        .exhibit-collectionView-group-count { display: none; }
+        
+        table.nobelist {
+            border:     1px solid #ddd;
+            padding:    0.5em;
+            margin:     0.5em 0;
+            display:    block;
+        }
+        div.name {
+            font-weight: bold;
+            font-size:   120%;
+        }
+        .relationship {
+            color:  #888;
+        }
+        
+        div.nobelist-thumbnail {
+            float:      left;
+            width:      13em;
+            height:     10em;
+            border:     1px solid #BCB79E;
+            background: #F0FFF0;
+            padding:    1em;
+            margin:     0.5em;
+            text-align: center;
+        }
+        div.nobelist-timeline-lens {
+            padding:    1em;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        function deceaseRowStyler(itemID, database, tr, rowIndex) {
+            var deceased = database.getObject(itemID, "deceased");
+            if (deceased == "yes") {
+                tr.style.backgroundColor = "#f88";
+            }
+        }
+    </script>
+  </head> 
+  <body>
+    <ul id="path">
+      <li><a href="http://www.simile-widgets.org/">SIMILE Widgets</a></li>
+      <li><a href="http://www.simile-widgets.org/exhibit/">Exhibit 3.0</a></li>
+      <li><a href="../">Demos</a></li>
+      <li><span>Examples: MIT Nobelists</span></li>
+    </ul>
+
+    <div id="main-content">
+        <div id="title-panel">
+            <h1>Exhibit 3.0 Scripted Demo: 63 MIT-related Nobel Prize Winners</h1>
+            <p>The information within this page has been retrieved from
+                <a href="http://web.mit.edu/newsoffice/special/nobels.html" target="_blank">this MIT official source</a>
+                while the thumbnails are included from <a href="http://nobelprize.org/" target="_blank">Nobelprize.org</a>.
+                Here is the <a href="nobelists.js" target="_blank">Exhibit JSON data file</a>.
+            </p>
+        </div>
+    
+        <div id="top-panels">
+            <table width="100%"><tr>
+                <td><div data-ex-role="facet" data-ex-expression=".discipline" data-ex-facet-label="Discipline"></div></td>
+                <td><div data-ex-role="facet" data-ex-expression=".relationship" data-ex-facet-label="Relationship"></div></td>
+                <td><div data-ex-role="facet" data-ex-expression=".shared" data-ex-facet-label="Shared?"></div></td>
+                <td><div data-ex-role="facet" data-ex-expression=".deceased" data-ex-facet-label="Deceased?"></div></td>
+            </tr></table>
+        </div>
+        <div data-ex-role="viewPanel" style="padding: 1em 0.5in;">
+            <table data-ex-role="lens" class="nobelist" style="display: none;"><tr>
+                <td><img data-ex-src-content=".imageURL" /></td>
+                <td>
+                    <div data-ex-content=".label" class="name"></div>
+                    <div>
+                        <span data-ex-content=".discipline" class="discipline"></span>, 
+                        <i data-ex-content=".nobel-year"></i>
+                    </div>
+                    <div data-ex-if-exists=".co-winner" class="co-winners">
+                        Co-winners: <span data-ex-content=".co-winner"></span>
+                    </div>
+                    <div data-ex-content=".relationship-detail" class="relationship"></div>
+                </td>
+            </tr></table>
+        
+            <div data-ex-role="view"
+                data-ex-view-class="Thumbnail"
+                data-ex-showa-ll="true"
+                data-ex-orders=".discipline"
+                data-ex-possible-orders=".label, .last-name, .discipline, .relationship, .shared, .deceased, .nobel-year">
+                <div data-ex-role="exhibit-lens" class="nobelist-thumbnail" style="display: none;">
+                    <img data-ex-src-content=".imageURL" />
+                    <div><span data-ex-content=".label"></span></div>
+                    <div>
+                        <span data-ex-content=".discipline" class="discipline"></span>, 
+                        <span data-ex-content=".nobel-year" class="year"></span>
+                    </div>
+                </div>
+            </div>
+            <div data-ex-role="view"
+                data-ex-label="Details"
+                data-ex-viewClass="Tile"
+                data-ex-show-all="true"
+                data-ex-orders=".discipline, .nobel-year"
+                data-ex-possible-orders=".label, .last-name, .discipline, .relationship, .shared, .deceased, .nobel-year">
+            </div>
+            <div data-ex-role="view"
+                data-ex-view-class="Timeline"
+                data-ex-start=".nobel-year"
+                data-ex-colorKey=".discipline"
+                data-ex-caption=".discipline"
+                data-ex-bubble-width="150"
+                data-ex-bubble-height="150">
+                <div data-ex-role="lens" class="nobelist-timeline-lens" style="display: none;">
+                    <img data-ex-src-content=".imageURL" />
+                    <div><span data-ex-content=".label"></span></div>
+                    <div>
+                        <span data-ex-content=".discipline" class="discipline"></span>, 
+                        <span data-ex-content=".nobel-year" class="year"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+Exhibit Releases
+================
+
+Exhibit 3.1.1 (Plan)
+---------------------------------
+
+* New documentation (Connie Huang)
+* Refactoring of facet code (Tochukwu Okoro)
+
+Exhibit 3.1.0 (Release Candidate)
+---------------------------------
+
+Thank you:
+
+* David Karger for the tremendous amount of improvements below
+* David Feeney for fixing the image and URL formatter bugs
+* Axel Hecht for fixing a bug in the filtering code 
+
+New Features:
+
+* TSV Importer
+* HTML Table Importer
+* HTML Table Exporter
+* Debugging HTML Parameter (?exhibit-dev=true)
+
+Perormance Enhancements:
+
+* Database now uses has constant-time index insertion rather than worst-case linear time.
+* Performance monitoring utility code added
+
+Bug Fixes:
+
+* Various fixes to the Cloud Facet
+* Expand/collapse facets by clicking the label in addition to the tiny plus icon
+* Warn instead of halt when a component fails
+* Google Spreadsheet Importer was treating :single as a value type
+* History was removing the url ?query
+* Data attributes had a text case error
+* Coordinaters weren't registering themselves
+* Bug fixes in the image and URL formatters
+* Filter control bug with booleans
+
+Documentation:
+
+* Updated demos to HTML5 syntax
+* Added Big Data demo (to show off faster data load time), TSV and HTML Table import demos.
+
+
+Exhibit 3.0
+-----------
+
+Initial rewrite of the Exhibit 2.0 code.

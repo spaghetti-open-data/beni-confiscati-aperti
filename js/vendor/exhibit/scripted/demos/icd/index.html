@@ -1,0 +1,106 @@
+<html>
+<head>
+    <title>SIMILE Widgets | Exhibit 3.0 | Scripted Demos | ICD10 Hierarchical Facet Browser</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" href="http://www.simile-widgets.org/styles/common.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <link rel="exhibit-data" type="application/json" href="icd10-infectious.json" />
+
+    <!-- Replace the URL here with http://api.simile-widgets.org/exhibit/current/exhibit-api.js -->
+    <script src="../api/exhibit-api.js"></script>
+</head>
+<body>
+    <ul id="path">
+      <li><a href="http://www.simile-widgets.org/">SIMILE Widgets</a></li>
+      <li><a href="http://www.simile-widgets.org/exhibit3/">Exhibit 3.0</a></li>
+      <li><a href="..">Demos</a></li>
+      <li><span>Examples: ICD10 Hierarchical Facet</span></li>
+    </ul>
+
+    <div id="content">
+    <h1>Exhibit 3.0 Scripted Demo: ICD10 Hierarchical Term Browser</h1>
+    
+    <table cellspacing="0" cellpadding="0" border="0" width="100%"><tr>
+        <td width="350px" style="padding-right: 20px;">
+
+          <div data-ex-role="facet" 
+               data-ex-facet-class="Hierarchical"
+               data-ex-expression=".superclasses"
+               data-ex-uniform-grouping=".superclasses"
+               data-ex-facet-label="ICD10 Terms"
+               data-ex-scroll="false"></div>
+        </td>
+        <td>
+          <div data-ex-role="view"
+	       data-ex-orders=".id"
+	       data-ex-direction="ascending"
+	       data-ex-grouped="false"
+	       data-ex-show-all="false"
+	       data-ex-abbreviated-count="20">
+
+	     <div data-ex-role="lens" class="icdnode-lens">
+              <table cellpadding="0" cellspacing="0">
+                <tr class="details">
+	              <td>
+                    <div class="title"><span data-ex-content=".code"></span> - <span data-ex-content=".label"></span></div>
+                    <div class="definition" data-ex-content=".definition"></div>
+                     <div data-ex-if="exists(.inclusion)">
+		              <div class="inclusion"><span class="property">Inclusion:</span><span data-ex-content=".inclusion"></span></div>
+		             </div>
+
+                    <div data-ex-if="exists(.exclusion)">
+		      <div class="exclusion"><span class="property">Exclusion:</span><span data-ex-content=".exclusion"></span></div>
+		    </div>
+
+                    <div class="identifier"><span class="property">Identifier:</span><span data-ex-content=".icdId"></span></div>
+                  </td>
+		</tr>
+              </table>
+            </div>
+
+          </div>
+        </td>
+
+	<td width="200px" style="padding-left: 20px;">
+
+	  <b>Search</b><br />
+          <div data-ex-role="facet" data-ex-facet-class="TextSearch"></div>
+          </br>
+	  
+          <div data-ex-role="facet" 
+               data-ex-expression=".kind"
+               data-ex-selection="category"
+	           data-ex-facet-label="Grouping"
+               ></div>
+
+          <div data-ex-role="facet" 
+               data-ex-expression=".MortL1Code"
+	       data-ex-facet-label="Mortality 1 Codes"
+               ></div>
+	  
+          <div data-ex-role="facet" 
+               data-ex-expression=".MortL2Code"
+	       data-ex-facet-label="Mortality 2 Codes"
+               ></div>
+	  
+          <div data-ex-role="facet" 
+               data-ex-expression=".MortL3Code"
+	       data-ex-facet-label="Mortality 3 Codes"
+               ></div>
+	  
+          <div data-ex-role="facet" 
+               data-ex-expression=".MortL4Code"
+	       data-ex-facet-label="Mortality 4 Codes"
+               ></div>
+	  
+          <div data-ex-role="facet" 
+               data-ex-expression=".MortBCode"
+	       data-ex-facet-label="Mortality B Codes"
+               ></div>
+	</td>
+      </tr>
+    </table>
+    </div>
+</body>
+</html>
