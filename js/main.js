@@ -8,7 +8,6 @@ var BC = {
 	},
 	actualSlide: 0,
 	slide: function(){
-		console.log(BC.actualSlide);
 		$('.slide').eq(BC.actualSlide).removeClass('hidden');
 		if(BC.actualSlide > 0) { $('.slide').eq(BC.actualSlide-1).addClass('hidden'); } else { $('.slide').eq(4).addClass('hidden'); }
 		BC.actualSlide++;

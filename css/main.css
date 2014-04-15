@@ -101,6 +101,7 @@ html, body {
 }
 h1,h2,h3,h4,h5,h6 { margin: 0; }
 ul li { list-style-type: none; }
+a { text-decoration: none !important; }
 
 .title {
     font-family: 'Bree Serif', serif;
@@ -253,6 +254,8 @@ footer:hover { bottom: 0; }
     position: relative;
     width: 100%;
 }
+
+.manifesto-text a:hover { color: #EB593C; font-weight: 400; }
 
 .coro-switch { 
     width: 33.33%;
