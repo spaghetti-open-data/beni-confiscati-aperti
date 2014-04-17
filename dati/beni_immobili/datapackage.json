@@ -2,6 +2,7 @@
   "name": "Confiscati bene",
   "title": "Beni immobili sequestrati alle mafie - dettaglio comunale",
   "description": "Dataset che deriva dallo scraping del sito dell'Agenzia Nazionale dei beni sequestrati e confiscati alla criminalità, la successiva pulizia e l'incrocio con i dataset amministrativi dell'ISTAT",
+  "homepage": "https://github.com/spaghetti-open-data/beni-confiscati-aperti/tree/gh-pages/dati/beni_immobili",
   "licenses": [
     {
       "id": "odc-pddl",
