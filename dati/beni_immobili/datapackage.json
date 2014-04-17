@@ -1,0 +1,102 @@
+{
+  "name": "Confiscati bene",
+  "title": "Beni immobili sequestrati alle mafie - dettaglio comunale",
+  "description": "Dataset che deriva dallo scraping del sito dell'Agenzia Nazionale dei beni sequestrati e confiscati alla criminalità, la successiva pulizia e l'incrocio con i dataset amministrativi dell'ISTAT",
+  "licenses": [
+    {
+      "id": "odc-pddl",
+      "name": "Public Domain Dedication and License",
+      "version": "0.1",
+      "url": "http://opendatacommons.org/licenses/pddl/1.0/"
+    }
+  ],
+  "sources": [{
+  "name": "Agenzia Nazionale per l'amministrazione e la destinazione dei beni sequestrati e confiscati alla criminalità",
+  "web": "http://www.benisequestraticonfiscati.it/Joomla/"
+},
+{
+  "name": "ISTAT - Confini amministrativi dei sistemi locali del lavoro e delle NUTS2 in versione generalizzata",
+  "web": "http://www.istat.it/it/archivio/24613"
+}],
+  "maintainers":[ {
+  "name": "Spaghetti Opendata",
+  "web": "http://www.spaghettiopendata.org/"
+}],
+  "resources": [
+    {
+      "name": "data",
+      "url": "https://github.com/aborruso/blackboard/raw/master/data/beni_immobili/data.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "id": "ID",
+            "description": "Progressivo numerico univoco",
+            "type": "integer"
+          },
+          {
+            "id": "tipo",
+            "description": "Tipo di bene confiscato",
+            "type": "string"
+          },
+          {
+            "id": "PRO_COM",
+            "description": "Codice identificativo Comune ISTAT",
+            "type": "integer"
+          },
+          {
+            "id": "NOME_COM",
+            "description": "Nome Comune ISTAT",
+            "type": "string"
+          },
+          {
+            "id": "NOME_PRO",
+            "description": "Nome Provincia ISTAT",
+            "type": "string"
+          },
+          {
+            "id": "NOME_REG",
+            "description": "Nome Regione ISTAT",
+            "type": "string"
+          },
+          {
+            "id": "stato",
+            "description": "Stato del bene",
+            "type": "string"
+          },
+          {
+            "id": "Categoria",
+            "description": "Categoria del bene",
+            "type": "string"
+          },
+          {
+            "id": "Sottocategoria",
+            "description": "Sottocategoria del bene",
+            "type": "string"
+          },
+          {
+            "id": "Ente destinatario",
+            "description": "Ente destinatario del bene",
+            "type": "string"
+          },
+          {
+            "id": "Dettaglio bene",
+            "description": "Ulteriori dettagli sul bene",
+            "type": "string"
+          },
+          {
+            "id": "Decreto destinazione",
+            "description": "Decreto di destinazione del bene",
+            "type": "string"
+          },
+          {
+            "id": "SourcePageURL",
+            "description": "URL della pagina sorgente dati dell'Agenzia Beni Confiscati",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
+}
