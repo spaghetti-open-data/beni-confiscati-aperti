@@ -25,7 +25,7 @@
   "resources": [
     {
       "name": "data",
-      "url": "https://github.com/aborruso/blackboard/raw/master/data/beni_immobili/data.csv",
+      "url": "https://raw.githubusercontent.com/spaghetti-open-data/beni-confiscati-aperti/gh-pages/dati/beni_immobili/data.csv",
       "format": "csv",
       "mediatype": "text/csv",
       "schema": {
