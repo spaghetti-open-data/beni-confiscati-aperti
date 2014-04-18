@@ -8,4 +8,4 @@ Il valore minimo della distribuzione del valore assume valore zero, mentre il va
 
 Sul file sorgente sono riportati anche i valori per provincia e regione.
 
-Il dataset è archiviato in questa cartella secondo le specifiche del "*[Tabular Data Package](http://dataprotocols.org/tabular-data-package/)*" e [qui](http://data.okfn.org/tools/view?url=https%3A%2F%2Fraw.githubusercontent.com%2Fspaghetti-open-data%2Fbeni-confiscati-aperti%2Fgh-pages%2Fdati%2Fbeni_immobili%2Fdatapackage.json) è possibile vederne una preview con un visualizzatore dedicato.
+Il dataset è archiviato in questa cartella secondo le specifiche del "**[Tabular Data Package](http://dataprotocols.org/tabular-data-package/)**" e [qui](http://data.okfn.org/tools/view?url=https%3A%2F%2Fraw.githubusercontent.com%2Fspaghetti-open-data%2Fbeni-confiscati-aperti%2Fgh-pages%2Fdati%2Fbeni_immobili%2Fdatapackage.json) è possibile vederne una preview con un visualizzatore dedicato.
