@@ -1,6 +1,6 @@
 {
     "name": "Livello delle quotazioni immobiliari",
-    "title": "Livello delle quotazioni immobiliari per Comuni - 2011",
+    "title": "Livello delle quotazioni immobiliari dei Comuni italiani - 2011",
     "description": "Dataset che deriva dallo scraping del file dell'Agenzia dell'entrate denominato \"Allegato 2 - Territorialità del livello delle quotazioni immobiliari\"",
     "homepage": "https://github.com/spaghetti-open-data/beni-confiscati-aperti/tree/gh-pages/dati/beni_immobili",
     "licenses": [
