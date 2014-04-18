@@ -60,7 +60,7 @@
                         "id": "COD_REG",
                         "description": "Codice identificativo Regione ISTAT",
                         "type": "integer"
-                    }
+                    },
                     {
                         "id": "NOME_REG",
                         "description": "Nome Regione ISTAT",
