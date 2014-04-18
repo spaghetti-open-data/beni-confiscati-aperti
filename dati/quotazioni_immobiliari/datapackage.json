@@ -50,7 +50,7 @@
                         "id": "COD_PRO",
                         "description": "Codice identificativo Provincia ISTAT",
                         "type": "integer"
-                    }
+                    },
                     {
                         "id": "NOME_PRO",
                         "description": "Nome Provincia ISTAT",
