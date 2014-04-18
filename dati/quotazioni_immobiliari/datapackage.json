@@ -1,1 +1,73 @@
-create
+{
+    "name": "Livello delle quotazioni immobiliari",
+    "title": "Livello delle quotazioni immobiliari per Comuni - 2011",
+    "description": "Dataset che deriva dallo scraping del sito dell'Agenzia dell'entrate denominato \"Allegato 2 - Territorialità del livello delle quotazioni immobiliari\"",
+    "homepage": "https://github.com/spaghetti-open-data/beni-confiscati-aperti/tree/gh-pages/dati/beni_immobili",
+    "licenses": [
+        {
+            "id": "odc-pddl",
+            "name": "Public Domain Dedication and License",
+            "version": "0.1",
+            "url": "http://opendatacommons.org/licenses/pddl/1.0/"
+        }
+    ],
+    "sources": [
+        {
+            "name": "Agenzia delle entrate",
+            "web": "http://www.agenziaentrate.gov.it/"
+        }
+    ],
+    "maintainers": [
+        {
+            "name": "Spaghetti Opendata",
+            "web": "http://www.agenziaentrate.gov.it/wps/wcm/connect/e0722e00427c0577930d9fb864e93aec/Allegato+2+-+Territorialit%C3%A0+del+livello+delle+quotazioni+immobiliari.pdf?MOD=AJPERES&amp;CACHEID=e0722e00427c0577930d9fb864e93aec"
+        }
+    ],
+    "resources": [
+        {
+            "name": "data",
+            "url": "https://raw.githubusercontent.com/spaghetti-open-data/beni-confiscati-aperti/gh-pages/dati/quotazioni_immobiliari/data.csv",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "schema": {
+                "fields": [
+                    {
+                        "id": "NOME_COM",
+                        "description": "Nome Comune ISTAT",
+                        "type": "string"
+                    },
+                    {
+                        "id": "PRO_COM",
+                        "description": "Codice identificativo Comune ISTAT",
+                        "type": "integer"
+                    },
+                    {
+                        "id": "valore",
+                        "description": "Livello delle quotazioni immobiliari",
+                        "type": "number"
+                    },
+                    {
+                        "id": "COD_PRO",
+                        "description": "Codice identificativo Provincia ISTAT",
+                        "type": "integer"
+                    }
+                    {
+                        "id": "NOME_PRO",
+                        "description": "Nome Provincia ISTAT",
+                        "type": "string"
+                    },
+                    {
+                        "id": "COD_REG",
+                        "description": "Codice identificativo Regione ISTAT",
+                        "type": "integer"
+                    }
+                    {
+                        "id": "NOME_REG",
+                        "description": "Nome Regione ISTAT",
+                        "type": "string"
+                    }                 
+                ]
+            }
+        }
+    ]
+}
