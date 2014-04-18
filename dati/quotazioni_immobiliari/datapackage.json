@@ -14,13 +14,13 @@
     "sources": [
         {
             "name": "Agenzia delle entrate",
-            "web": "http://www.agenziaentrate.gov.it/"
+            "web": "http://www.agenziaentrate.gov.it/wps/wcm/connect/e0722e00427c0577930d9fb864e93aec/Allegato+2+-+Territorialit%C3%A0+del+livello+delle+quotazioni+immobiliari.pdf?MOD=AJPERES&amp;CACHEID=e0722e00427c0577930d9fb864e93aec"
         }
     ],
     "maintainers": [
         {
             "name": "Spaghetti Opendata",
-            "web": "http://www.agenziaentrate.gov.it/wps/wcm/connect/e0722e00427c0577930d9fb864e93aec/Allegato+2+-+Territorialit%C3%A0+del+livello+delle+quotazioni+immobiliari.pdf?MOD=AJPERES&amp;CACHEID=e0722e00427c0577930d9fb864e93aec"
+            "web": "www.spaghettiopendata.org"
         }
     ],
     "resources": [
@@ -65,7 +65,7 @@
                         "id": "NOME_REG",
                         "description": "Nome Regione ISTAT",
                         "type": "string"
-                    }                 
+                    }
                 ]
             }
         }
