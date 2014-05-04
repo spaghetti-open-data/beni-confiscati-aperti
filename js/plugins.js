@@ -22,3 +22,11 @@
 }());
 
 // Place any jQuery/helper plugins in here.
+
+$.fn.exBounce = function(){
+    var self = this;
+    (function runEffect(){
+        self.effect("bounce", 5000, runEffect);
+    })();
+   return this;
+};

@@ -45,25 +45,32 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             <![endif]-->
 
-            <!-- Add your site or application content here -->
-            <header class="redBG cyan">
-            <!-- <h1 class="title site-title white">CONFISCATI BENE!</h1>
-            <h3 class="subtitle site-subtitle white">I risultati dell'hackaton #SOD14 sui beni confiscati alle mafie, a partire dal scraping del sito dell'Agenzia Nazionale per i beni confiscati.</h3>
-            <div class="toggle cyanBG red" id="toggle-menu"><i class="fa fa-bars"></i></div> -->
+        <!-- Add your site or application content here -->
+        <header class="redBG cyan">
             <div class="toggle cyan" id="toggle-menu"><i class="fa fa-bars"></i></div>
         </header>
 
         <nav class="greyBG white" id="menu">
             <ul>
-                <li id="home-btn" class="menu-entry p cyan base-text"><i class="fa fa-home"></i><span class="menu-separator">HOME</span></li>
+                <li id="home-btn" class="menu-entry p cyan base-text">
+                    <i class="fa fa-home"></i>
+                    <span class="menu-separator">HOME</span>
+                </li>
                 <li id="manifesto-btn" class="menu-entry p cyan base-text"><i class="fa fa-file-text"></i><span class="menu-separator">MANIFESTO</span></li>
                 <li id="data-btn" class="menu-entry p cyan base-text"><i class="fa fa-bar-chart-o"></i><span class="menu-separator">I DATI</span></li>
-                <li id="coroplets-btn" class="menu-entry p cyan base-text"><i class="fa fa-globe"></i><span class="menu-separator">LE CHOROPLETHS</span></li>
+                <li id="coroplets-btn" class="menu-entry p cyan base-text"><i class="fa fa-globe"></i><span class="menu-separator">LE COROPLETE</span></li>
                 <li id="dataset-btn" class="menu-entry p cyan base-text"><i class="fa fa-table"></i><span class="menu-separator">I DATASET</span></li>
                 <li id="tools-btn" class="menu-entry p cyan base-text"><i class="fa fa-cogs"></i><span class="menu-separator">GLI STRUMENTI</span></li>
-                <li id="about-btn" class="menu-entry p cyan base-text"><i class="fa fa-question-circle"></i></i><span class="menu-separator">HELLO!</span></li>
-                <li id="comment-btn" class="menu-entry p cyan base-text"><i class="fa fa-comments"></i></i><span class="menu-separator"><a class="cyan" href="http://spaghetti-open-data.github.io/beni-confiscati-aperti/commenti.html" target="blank">COMMENTA</a></span></li>
-                <li id="news-btn" class="menu-entry p cyan base-text"><i class="fa fa-bullhorn"></i></i><span class="menu-separator"><a class="cyan" href="" target="blank">WEB NEWS</a></span></li>
+                <li id="about-btn" class="menu-entry p cyan base-text">
+                    <i class="fa fa-question-circle"></i>
+                    <span class="menu-separator">HELLO!</span>
+                </li>
+                <li id="comment-btn" class="menu-entry p cyan base-text">
+                    <i class="fa fa-comments"></i>
+                    <span class="menu-separator"><a class="cyan" href="commenti.html" target="blank">COMMENTA</a></span>
+                </li>
+                <li id="news-btn" class="menu-entry p cyan base-text"><i class="fa fa-bullhorn"></i><span class="menu-separator"><a class="cyan" href="rassegnastampa.html" target="blank">WEB NEWS</a></span></li>
+                <li id="potenziale-btn" class="menu-entry p cyan base-text"><i class="fa fa-flask"></i><span class="menu-separator"><a class="cyan" href="#" target="blank">ENERGIA POTENZIALE</a></span></li>
             </ul>
         </nav>
 
@@ -71,10 +78,10 @@
 
             <div class="pre redBG" id="home-permalink"></div>
             <div class="page" id="home">
-                <h1 class="title site-title white">CONFISCATI BENE!</h1>
-                <h3 class="subtitle site-subtitle white">I risultati dell'hackaton #SOD14 sui beni confiscati alle mafie, a partire dal scraping del sito dell'Agenzia Nazionale per i beni confiscati.</h3>
-                <h1 class="title site-title white scroll-to-view"><i class="fa fa-chevron-circle-down"></i></h1>
-                <h3 class="subtitle site-subtitle white">scroll down</h3>
+                <h1 class="title site-title white testocentrato">CONFISCATI BENE!</h1>
+                <h3 class="subtitle site-subtitle white testocentrato">I risultati dell'hackaton #SOD14 sui beni confiscati alle mafie, a partire dal scraping del sito dell'Agenzia Nazionale per i beni confiscati.</h3>
+                <h1 class="title site-title white scroll-to-view testocentrato" id="scroll-down-btn"><i class="fa fa-chevron-circle-down"></i></h1>
+                <h3 class="subtitle site-subtitle white testocentrato" id="scroll-down-text">scroll down</h3>
             </div>
 
             <div class="pre redBG" id="manifesto-permalink"></div>
@@ -164,7 +171,7 @@
 
             <div class="pre" id="coroplets-permalink"></div>
             <div class="page" id="coroplets">
-                <h1 class="title page-title cyanBG red"> - LE CHOROPLETHS - </h1>
+                <h1 class="title page-title cyanBG red"> - LE COROPLETE | <a class="small-text red title-link" href=""><i class="fa fa-flask red"></i> MAPPE ENERGIA POTENZIALE</a> - </h1>
                 <div class="page-nav redBG" id="coro-switches">
                     <p class="left link coro-switch redBG white"><span class="hover-box active" id="region">REGIONI</span></p>
                     <p class="left link coro-switch redBG white"><span class="hover-box" id="province">PROVINCE</p>
@@ -408,6 +415,7 @@
 
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
             <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+            <script type="text/javascript" src="js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
             <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
 
             <script type="text/javascript" src="js/data/coroplete/regioni_beni_tipo.js"></script>
