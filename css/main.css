@@ -103,9 +103,7 @@ h1,h2,h3,h4,h5,h6 { margin: 0; }
 ul li { list-style-type: none; }
 a { text-decoration: none !important; }
 
-.testocentrato {
-    text-align:center;
-}
+.testocentrato { text-align:center; }
 
 .title {
     font-family: 'Bree Serif', serif;
@@ -149,6 +147,7 @@ a { text-decoration: none !important; }
 
 .big-text { font-size: 3em; }
 .medium-text { font-size: 2em; }
+.inter-text { font-size: 1.5em; }
 .base-text { font-size: 1em; }
 .small-text { font-size: .8em; }
 .tiny-text { font-size: .5em; }
@@ -165,7 +164,7 @@ a { text-decoration: none !important; }
 .col1 { width: 96%; padding: 0 2% 0 2%; }
 .col2 { width: 62.66%; padding: 0 2% 0 2%; }
 .col3 { width: 29.33%; padding: 0 2% 0 2%; }
-.col6 { width: 12.33%; padding: 0 2% 0 2%; }
+.col6 { width: 12.65%; padding: 0 2% 0 2%; }
 
 /* - //////////////////// - */
 /* - STILI DEGLI ELEMENTI - */
@@ -280,7 +279,7 @@ footer:hover { bottom: 0; }
 
 .scroll-to-view { font-size: 10em; }
 
-.manifesto-text a:hover { color: #FFFCEC; background: #EB593C }
+.manifesto-text a:hover/*, a:hover*/ { color: #FFFCEC; background: #EB593C }
 
 .coro-switch { 
     width: 33.33%;
@@ -300,6 +299,13 @@ footer:hover { bottom: 0; }
 }
 .left-scr { left: 0; }
 .right-scr { right: 0; }
+
+.file-thumbnail { padding: 2% 4%; }
+.thumbnail {
+    position: relative;
+    width: 100%;
+    display: block;
+}
 
 #team { padding-top: 0 !important; }
 #team-sheets {
