@@ -47,34 +47,47 @@
 
         <!-- Add your site or application content here -->
         <header class="redBG cyan">
-            <h1 class="title site-title white">CONFISCATI BENE!</h1>
+            <!-- <h1 class="title site-title white">CONFISCATI BENE!</h1>
             <h3 class="subtitle site-subtitle white">I risultati dell'hackaton #SOD14 sui beni confiscati alle mafie, a partire dal scraping del sito dell'Agenzia Nazionale per i beni confiscati.</h3>
-            <div class="toggle cyanBG red" id="toggle-menu"><i class="fa fa-bars"></i></div>
+            <div class="toggle cyanBG red" id="toggle-menu"><i class="fa fa-bars"></i></div> -->
+            <div class="toggle cyan" id="toggle-menu"><i class="fa fa-bars"></i></div>
         </header>
 
         <nav class="greyBG white" id="menu">
             <ul>
-                <li id="home-btn" class="menu-entry p cyan base-text"><i class="fa fa-file-text"></i><span class="menu-separator">MANIFESTO</span></li>
+                <li id="home-btn" class="menu-entry p cyan base-text"><i class="fa fa-home"></i><span class="menu-separator">HOME</span></li>
+                <li id="manifesto-btn" class="menu-entry p cyan base-text"><i class="fa fa-file-text"></i><span class="menu-separator">MANIFESTO</span></li>
                 <li id="data-btn" class="menu-entry p cyan base-text"><i class="fa fa-bar-chart-o"></i><span class="menu-separator">I DATI</span></li>
                 <li id="coroplets-btn" class="menu-entry p cyan base-text"><i class="fa fa-globe"></i><span class="menu-separator">LE CHOROPLETHS</span></li>
                 <li id="dataset-btn" class="menu-entry p cyan base-text"><i class="fa fa-table"></i><span class="menu-separator">I DATASET</span></li>
                 <li id="tools-btn" class="menu-entry p cyan base-text"><i class="fa fa-cogs"></i><span class="menu-separator">GLI STRUMENTI</span></li>
                 <li id="about-btn" class="menu-entry p cyan base-text"><i class="fa fa-question-circle"></i></i><span class="menu-separator">HELLO!</span></li>
+                <li id="comment-btn" class="menu-entry p cyan base-text"><i class="fa fa-comments"></i></i><span class="menu-separator"><a class="cyan" href="http://spaghetti-open-data.github.io/beni-confiscati-aperti/commenti.html" target="blank">COMMENTA</a></span></li>
+                <li id="news-btn" class="menu-entry p cyan base-text"><i class="fa fa-bullhorn"></i></i><span class="menu-separator"><a class="cyan" href="" target="blank">WEB NEWS</a></span></li>
             </ul>
         </nav>
 
         <div class="p" id="site-wrapper">
 
+            <div class="pre redBG" id="home-permalink"></div>
             <div class="page" id="home">
+                <h1 class="title site-title white">CONFISCATI BENE!</h1>
+                <h3 class="subtitle site-subtitle white">I risultati dell'hackaton #SOD14 sui beni confiscati alle mafie, a partire dal scraping del sito dell'Agenzia Nazionale per i beni confiscati.</h3>
+                <h1 class="title site-title white scroll-to-view"><i class="fa fa-chevron-circle-down"></i></h1>
+                <h3 class="subtitle site-subtitle white">scroll down</h3>
+            </div>
+
+            <div class="pre redBG" id="manifesto-permalink"></div>
+            <div class="page" id="manifesto">
                 <h1 class="title page-title cyanBG red"> - MANIFESTO - </h1>
                 <div class="row clearfix">
                     <div class="col3 col">
                         <i class="fa fa-lock big-icon red"></i>
-                        <p class="p manifesto-text red">La disponibilità di <strong>informazioni semplici, dirette e ricche sui beni confiscati alle mafie</strong> permette alle imprese sane e alla società civile di costruire su di essi progetti di impresa sostenibile e di creazione di valore sociale. Ciascun bene confiscato ma non riassegnato imprigiona in sé <a class="grey" href = "https://github.com/spaghetti-open-data/beni-confiscati-aperti/wiki/Energia-potenziale-dei-beni-confiscati">energia potenziale</a> che dovrebbe invece essere liberata sul territorio.</p>
+                        <p class="p manifesto-text red">La disponibilità di <strong>informazioni semplici, dirette e ricche sui beni confiscati alle mafie</strong> permette alle imprese sane e alla società civile di costruire su di essi progetti di impresa sostenibile e di creazione di valore sociale. Ciascun bene confiscato ma non riassegnato imprigiona in sé <a class="grey" href = "https://github.com/spaghetti-open-data/beni-confiscati-aperti/wiki/Energia-potenziale" target="_blank">energia potenziale</a> che dovrebbe invece essere liberata sul territorio.</p>
                     </div>
                     <div class="col3 col">
                         <i class="fa fa-key big-icon red"></i>
-                        <p class="p manifesto-text red"><strong>I dati</strong> pubblicati sul sito dell'<a class="grey" href = "http://www.benisequestraticonfiscati.it/Joomla/">Agenzia nazionale per l'amministrazione e la destinazione dei beni sequestrati e confiscati alla criminalità organizzata</a> <strong>non sono completi, primari, tempestivi e riutilizzabili</strong>. Li abbiamo estratti, resi disponibili come open data e usati per consentire a tutti di esplorarli in modo intuitivo, anche attraverso visualizzazioni. Consideratelo un regalo di <a class="grey" href = "http://www.spaghettiopendata.org">Spaghetti Open Data</a> e <a href = "http://www.openpompei.it">OpenPompei</a>, un segno di apprezzamento per il lavoro prezioso fatto dall'ANBSC e dalle tante imprese e associazioni che lavorano sui beni confiscati in tutta Italia.</p>
+                        <p class="p manifesto-text red"><strong>I dati</strong> pubblicati sul sito dell'<a class="grey" href = "http://www.benisequestraticonfiscati.it/Joomla/" target="_blank">Agenzia nazionale per l'amministrazione e la destinazione dei beni sequestrati e confiscati alla criminalità organizzata</a> <strong>non sono completi, primari, tempestivi e riutilizzabili</strong>. Li abbiamo estratti, resi disponibili come open data e usati per consentire a tutti di esplorarli in modo intuitivo, anche attraverso visualizzazioni. Consideratelo un regalo di <a class="grey" href = "http://www.spaghettiopendata.org" target="_blank">Spaghetti Open Data</a> e <a  class="grey" href = "http://www.openpompei.it" target="_blank">OpenPompei</a>, un segno di apprezzamento per il lavoro prezioso fatto dall'ANBSC e dalle tante imprese e associazioni che lavorano sui beni confiscati in tutta Italia.</p>
                     </div>
                     <div class="col3 col">
                         <i class="fa fa-unlock-alt big-icon red"></i>
@@ -83,6 +96,7 @@
                 </div>
             </div>
 
+            <div class="pre" id="data-permalink"></div>
             <div class="page" id="data">
                 <h1 class="title page-title cyanBG red"> - I DATI - </h1>
                 <div class="row clearfix">
@@ -148,6 +162,7 @@
                 </div>
             </div>
 
+            <div class="pre" id="coroplets-permalink"></div>
             <div class="page" id="coroplets">
                 <h1 class="title page-title cyanBG red"> - LE CHOROPLETHS - </h1>
                 <div class="page-nav redBG" id="coro-switches">
@@ -163,14 +178,17 @@
                 <div class="scroller right-scr right"></div>
             </div>
 
+            <div class="pre" id="dataset-permalink"></div>
             <div class="page" id="dataset">
                 <h1 class="title page-title cyanBG red"> - I DATASET - </h1>
             </div>
 
+            <div class="pre" id="tools-permalink"></div>
             <div class="page" id="tools">
                 <h1 class="title page-title cyanBG red"> - GLI STRUMENTI - </h1>
             </div>
 
+            <div class="pre" id="about-permalink"></div>
             <div class="page last-page" id="about">
                 <h1 class="title page-title cyanBG red"> - HELLO! - </h1>
                 <div class="row clearfix">
@@ -199,17 +217,77 @@ Nel fare questo, ancora una volta, è di fondamentale importanza che i dati sian
                         <p class="grey">di Cristina Da Rold</p>
                     </div>
                 </div>
-                <div class="row clearfix" id="team">
-                    <p class="col1 col p medium-text red">TEAM</p>
-                </div>
-                <div class="row clearfix" id="credits">
-                    <p class="col1 col p medium-text red">CREDITS</p>
-                </div>
             </div>
 
         </div>
 
         <footer class="greyBG white">
+            <div id="toggle-footer"><i class="fa fa-bars"></i></div>
+            <div class="row clearfix" id="team">
+                <p class="col1 col p base-text cyan footer-title">CIVIC HACKERS</p>
+                <ul id="team-sheets">
+                    <li class="team-sheet">
+                        <div class="avatar" style="background:url('css/img/generic-avatar.png') no-repeat transparent"></div>
+                        <p class="small-text p cyan">ANDREA BORRUSO</p>
+                        <a class="small-text p red" href="#">@aborruso</a>
+                    </li>
+                    <li class="team-sheet">
+                        <div class="avatar" style="background:url('css/img/generic-avatar.png') no-repeat transparent"></div>
+                        <p class="small-text p cyan">ANDREA BORRUSO</p>
+                        <a class="small-text p red" href="#">@aborruso</a>
+                    </li>
+                    <li class="team-sheet">
+                        <div class="avatar" style="background:url('css/img/generic-avatar.png') no-repeat transparent"></div>
+                        <p class="small-text p cyan">ANDREA BORRUSO</p>
+                        <a class="small-text p red" href="#">@aborruso</a>
+                    </li>
+                    <li class="team-sheet">
+                        <div class="avatar" style="background:url('css/img/generic-avatar.png') no-repeat transparent"></div>
+                        <p class="small-text p cyan">ANDREA BORRUSO</p>
+                        <a class="small-text p red" href="#">@aborruso</a>
+                    </li>
+                    <li class="team-sheet">
+                        <div class="avatar" style="background:url('css/img/generic-avatar.png') no-repeat transparent"></div>
+                        <p class="small-text p cyan">ANDREA BORRUSO</p>
+                        <a class="small-text p red" href="#">@aborruso</a>
+                    </li>
+                    <li class="team-sheet">
+                        <div class="avatar" style="background:url('css/img/generic-avatar.png') no-repeat transparent"></div>
+                        <p class="small-text p cyan">ANDREA BORRUSO</p>
+                        <a class="small-text p red" href="#">@aborruso</a>
+                    </li>
+                    <li class="team-sheet">
+                        <div class="avatar" style="background:url('css/img/generic-avatar.png') no-repeat transparent"></div>
+                        <p class="small-text p cyan">ANDREA BORRUSO</p>
+                        <a class="small-text p red" href="#">@aborruso</a>
+                    </li>
+                    <li class="team-sheet">
+                        <div class="avatar" style="background:url('css/img/generic-avatar.png') no-repeat transparent"></div>
+                        <p class="small-text p cyan">ANDREA BORRUSO</p>
+                        <a class="small-text p red" href="#">@aborruso</a>
+                    </li>
+                    <li class="team-sheet">
+                        <div class="avatar" style="background:url('css/img/generic-avatar.png') no-repeat transparent"></div>
+                        <p class="small-text p cyan">ANDREA BORRUSO</p>
+                        <a class="small-text p red" href="#">@aborruso</a>
+                    </li>
+                    <li class="team-sheet">
+                        <div class="avatar" style="background:url('css/img/generic-avatar.png') no-repeat transparent"></div>
+                        <p class="small-text p cyan">ANDREA BORRUSO</p>
+                        <a class="small-text p red" href="#">@aborruso</a>
+                    </li>
+                    <li class="team-sheet">
+                        <div class="avatar" style="background:url('css/img/generic-avatar.png') no-repeat transparent"></div>
+                        <p class="small-text p cyan">ANDREA BORRUSO</p>
+                        <a class="small-text p red" href="#">@aborruso</a>
+                    </li>
+                    <li class="team-sheet">
+                        <div class="avatar" style="background:url('css/img/generic-avatar.png') no-repeat transparent"></div>
+                        <p class="small-text p cyan">ANDREA BORRUSO</p>
+                        <a class="small-text p red" href="#">@aborruso</a>
+                    </li>
+                </ul>
+            </div>
         </footer>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

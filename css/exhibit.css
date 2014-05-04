@@ -1,15 +1,15 @@
 div.exhibit-bookmarkWidget-popup, div.exhibit-toolboxWidget-popup { display: none !important; }
 div.exhibit-resizableDivWidget-resizer { visibility: hidden; }
 
-div.exhibit-facet-body-frame { max-height: 300px; overflow: scroll; }
+div.exhibit-facet-body-frame { max-height: 150px; overflow: scroll; }
 
 div .exhibit-facet-body { border: 0px !important; height: auto !important; min-height: 100px !important; }
 div .exhibit-facet-header {
 	background: #ABDCD6;
 	color: #EB593C;
-	font-size: 24px;
+	font-size: 16px;
 	text-transform: uppercase;
-	padding: 10px !important;
+	padding: 0 10px 0 10px !important;
 	margin-bottom: 30px;
 	font-weight: 200 !important;
 }
@@ -19,14 +19,14 @@ div .exhibit-facet-value {
 	position: relative;
 	height: 10px;
 	float: left !important;
-	padding: 5px !important;
+	padding: 4px !important;
 	border-radius: 4px;
 	background: #EB593C;
 	color: #FFFCEC;
 	clear: none !important;
 	margin: 0 5px 5px 0;
 	line-height: 1em;
-	font-size: 12px;
+	font-size: 10px;
 	font-style:italic;
 	font-weight: 400 !important;
 }
@@ -49,9 +49,9 @@ div.exhibit-facet-value-checkbox {
 div.exhibit-collectionView-header, div.exhibit-views-header {
 	background: #ABDCD6;
 	color: #EB593C;
-	font-size: 24px;
+	font-size: 12px;
 	text-transform: uppercase;
-	padding-bottom: 10px !important;
+	padding-bottom: 5px !important;
 	/*margin-bottom: 30px;*/
 	font-weight: 400 !important;
 }
@@ -62,7 +62,7 @@ span.exhibit-collectionSummaryWidget-results { padding: 0 10px 0 10px !important
 
 table.exhibit-tabularView-body tr {
 	color: #EB593C;
-	font-size: 18px;
+	font-size: 12px;
 	padding: 1%;
 }
 table.exhibit-tabularView-body tr:nth-child(2n+0) {
@@ -79,7 +79,7 @@ table.exhibit-tabularView-body, table.exhibit-tabularView-body th, table.exhibit
 	border-left-width: 0px;
 	border-collapse:collapse;
 
-	height: 30px;
+	height: 20px;
 	vertical-align:middle;
 	padding: .5%;
 }

@@ -28,7 +28,7 @@ var BC = {
 		}
 	},
 	geojson: null,
-	map: L.map('map').setView([41.91, 12.832], 5),
+	map: L.map('map',{scrollWheelZoom:false}).setView([41.91, 12.832], 5),
 	layer: L.tileLayer (
 		'http://{s}.acetate.geoiq.com/tiles/acetate/{z}/{x}/{y}.png',
 		{
@@ -184,12 +184,18 @@ var BC = {
 		});
 
 		$('body').on('click','.menu-entry', function(e){
-			var target = '#' + $(this).attr('id').replace('-btn','');
-			var targetTop = $(target).offset().top - $('header').height();
-			//$(window).scrollTop(targetTop);
-			$('html, body').animate({
-				scrollTop : targetTop + 'px'
-			},500)
+
+			if( $(this).attr('id') != 'comment-btn' && $(this).attr('id') != 'news-btn' )
+			{
+				e.preventDefault();
+				var target = '#' + $(this).attr('id').replace('-btn','');
+				var targetTop = $(target).offset().top - $('header').height();
+			
+				$('html, body').animate({
+					scrollTop : targetTop + 'px'
+				},500);
+			}
+			
 		});
 
 	}

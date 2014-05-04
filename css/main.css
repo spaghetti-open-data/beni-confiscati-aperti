@@ -110,8 +110,8 @@ a { text-decoration: none !important; }
 }
 .site-title {
     padding: 0% 5% 0% 5%;
-    font-size: 2em;
-    line-height: 1.6em;
+    font-size: 3em;
+    line-height: 2em;
 }
 .page-title {
     padding: .5% 5% .5% 5%;
@@ -123,14 +123,13 @@ a { text-decoration: none !important; }
     font-weight: 200;
     text-shadow: 0px 1px 0px rgba(55,55,55,0.25);
 }
-.site-subtitle {
-    padding: 0% 5% .5% 5%;
-}
+.site-subtitle { padding: 0% 5% .5% 5%; }
+
 .p {
     font-family: 'Raleway', sans-serif;
     font-weight: 200;
     font-size: 1em;
-    text-shadow: 0px 1px 0px rgba(55,55,55,0.25);
+    /*text-shadow: 0px 1px 0px rgba(55,55,55,0.25);*/
 }
 .red { color: #EB593C; }
 .grey { color: #333333; }
@@ -172,7 +171,7 @@ header, footer {
     width: 100%;
     z-index: 200;
 }
-header { top: 0; left: 0; /*min-height: 10%; */height: 100px; opacity: 1; }
+header { top: 0; left: 0; /*min-height: 10%; */height: 30px; opacity: 1; }
 
 #toggle-menu { 
     position: absolute;
@@ -182,12 +181,12 @@ header { top: 0; left: 0; /*min-height: 10%; */height: 100px; opacity: 1; }
     width: 5%;
     height: 100%;
     text-align: center;
-    font-size: 2em;
-    line-height: 3em;
+    font-size: 1.5em;
+    line-height: 1.3em;
     text-align: center;
-    -webkit-box-shadow: -1px 0px 0px 0px rgba(171, 220, 214, .5);
+    /*-webkit-box-shadow: -1px 0px 0px 0px rgba(171, 220, 214, .5);
     -moz-box-shadow:    -1px 0px 0px 0px rgba(171, 220, 214, .5);
-    box-shadow:         -1px 0px 0px 0px rgba(171, 220, 214, .5);
+    box-shadow:         -1px 0px 0px 0px rgba(171, 220, 214, .5);*/
 }
 #toggle-menu:hover {
     background-color: #EB593C;
@@ -196,13 +195,17 @@ header { top: 0; left: 0; /*min-height: 10%; */height: 100px; opacity: 1; }
 }
 
 footer { 
-    bottom: -25%; 
+    bottom: -28%;
+    bottom: -235px;
     left: 0; 
     height: 30%;
+    height: 250px;
     -webkit-transition: bottom .1s ease;
-    transition: bottom .1s ease; 
+    transition: bottom .1s ease;
+    overflow: scroll;
 }
 footer:hover { bottom: 0; }
+#toggle-footer { margin: auto; width: 20%; text-align: center; font-size: .75em; }
 
 #menu {
     position: fixed;
@@ -224,12 +227,25 @@ footer:hover { bottom: 0; }
     width: 100%;
     padding: 12.5% 0 12.5% 7.5%;
 }
-.menu-entry:hover {
+.menu-entry:hover, .menu-entry a:hover {
     background: #ABDCD6;
     color: #333333;
     cursor: pointer;
 }
 .menu-separator { margin-left: 20px; }
+
+.exhibit-busyIndicator {}
+.exhibit-busyIndicator-content {
+    background-image: none !important;
+    background: #FFFCEC;
+    border-radius: 4px;
+    padding: 10px;
+    font-family: 'Raleway', sans-serif !important;
+    font-weight: 200 !important;
+    font-size: 1em !important;
+    text-shadow: none !important;
+    color: #EB593C;
+}
 
 #site-wrapper {
     background: url('img/white_wall_hash_@2X.png') transparent;
@@ -238,10 +254,11 @@ footer:hover { bottom: 0; }
     min-height: 100%;
     height: 100%;
     z-index: 100;
-    top: 100px;
+    top: 30px;
     min-width: 1024px;
 }
 
+.pre { height: 30px; }
 .page {
     background: url('img/white_wall_hash_@2X.png') transparent;
     background-size: 500px 500px;
@@ -254,8 +271,11 @@ footer:hover { bottom: 0; }
     position: relative;
     width: 100%;
 }
+#home { background: #EB593C; }
 
-.manifesto-text a:hover { color: #EB593C; font-weight: 400; }
+.scroll-to-view { font-size: 10em; }
+
+.manifesto-text a:hover { color: #FFFCEC; background: #EB593C }
 
 .coro-switch { 
     width: 33.33%;
@@ -275,6 +295,26 @@ footer:hover { bottom: 0; }
 }
 .left-scr { left: 0; }
 .right-scr { right: 0; }
+
+#team { padding-top: 0 !important; }
+#team-sheets {
+    clear: both;
+    padding-left: 2%;
+}
+.team-sheet {
+    width: 170px;
+    height: 190px;
+    float: left;
+}
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    background-size: 100px !important;
+}
+.team-sheet p, .team-sheet a { margin-bottom: 0 !important; }
 
 /* ==========================================================================
    Helper classes
