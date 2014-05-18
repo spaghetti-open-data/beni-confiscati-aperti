@@ -6,7 +6,7 @@
 
 // Italian law allows for sequestering assets to individuals convicted for Mafia crimes. These assets are turned over to "clean" businesses and civil society groups.
 
-// This process is managed my a government agency called Agenzia Nazionale per i Beni Confiscati e Sequestrati.
+// This process is managed by a government agency called Agenzia Nazionale per i Beni Confiscati e Sequestrati.
 
 // Spaghetti Open Data works at a demo website of the soon-to-be-release (hopefully) website of the Agenzia. 
 // Started at the SOD14 hackathon on MArch, 29th 2014. Info: http://www.spaghettiopendata.org
