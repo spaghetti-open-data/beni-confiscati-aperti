@@ -1,0 +1,23 @@
+@default_font: 'Open Sans', Arial, Helvetica, sans-serif;
+@header_font: 'Oxygen', Arial, Helvetica, sans-serif;
+@golden: 1;
+
+//**
+// Mixins
+//**
+ 
+.HeaderFont () {
+    font-family: @header_font;
+    line-height: 1.313em;
+}
+
+body {
+    margin: 0;
+    font-family: @default_font;
+    line-height: @golden + 0em; //set the regular line height to the golden ratio
+    font-weight: 300;
+}
+
+h1 {
+	.HeaderFont;
+}
