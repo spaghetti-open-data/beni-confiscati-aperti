@@ -513,6 +513,10 @@ and (max-device-width : 568px) {
     }
 }
 
+.posta{
+    text-align: center;
+}
+
 .posta a:link {color:#FFFFFF;}      /* unvisited link */
 .posta a:visited {color:#FFFFFF;}  /* visited link */
 .posta a:hover {color:#FFFFFF;}  /* mouse over link */
