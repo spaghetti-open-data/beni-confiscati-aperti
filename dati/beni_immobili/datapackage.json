@@ -26,7 +26,7 @@
   "resources": [
     {
       "name": "data",
-      "url": "https://raw.githubusercontent.com/spaghetti-open-data/beni-confiscati-aperti/gh-pages/dati/beni_immobili/data.csv",
+      "path": "data.csv",
       "format": "csv",
       "mediatype": "text/csv",
       "schema": {
